@@ -1,0 +1,182 @@
+.mockInfo {
+    margin-top: 7vh;
+    background: transparent linear-gradient(180deg, #3969ad, #1d3557);
+    min-height: 200px;
+    color: white;
+}
+
+.mockInfo>div {
+    width: 70%;
+    margin: auto;
+}
+
+.mockInfo h2 {
+    width: 80%;
+    line-height: 3em;
+}
+
+.mockInfo p {
+    width: 50%;
+}
+.mockBody{
+    width: 70%;
+    margin: auto;
+}
+.mockHeading{
+    color: #22559c;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 4em;
+}
+.pastMock::before{
+    display: inline-block;
+    content: "";
+    position: relative;
+    top: 0;
+    height: 3px;
+    width: 42%;
+    margin-right: 2%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #5f8dc4;
+    margin-left: auto;
+}
+.pastMock{
+    color: #ffa000;
+    display: inline;
+}
+.pastMock::after{
+    display: inline-block;
+    content: "";
+    position: relative;
+    top: 0;
+    height: 3px;
+    margin-left: 2% !important;
+    width: 42%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #5f8dc4;
+    margin-left: auto;
+}
+
+.mockCard{
+    max-width: 16em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    background: transparent linear-gradient(180deg,#e0ebf9,#fff 54%,#fff) 0 0 no-repeat padding-box;
+    box-shadow: 0 10px 30px rgba(95,141,196,.2);
+    border-radius: 5px;
+    margin-top: 1.5em;
+}
+.mockCardDiv{
+    margin: auto;
+}
+.mockCardDiv img{
+    width: 100%;
+    max-height: 10vh;
+}
+.mockOptions{
+    display: flex;
+    justify-content: space-between;
+}
+.mockCardInfo{
+    text-align: center;
+    color: #3969ad;
+    font-weight: 500;
+}
+.cardDetails{
+    display: flex;
+    margin: 1em 0;
+}
+.cardDetails div p{
+    text-align: center;
+}
+.cardParticipant,.cardDates,.cardDuration{
+    padding:0 .8em;
+    color: #707070;
+    font-size: 15px;
+    font-weight: 500;
+}
+.detailsName{
+    font-size: 11px;
+    color: #707070;
+}
+.cardDates p{
+    padding:0 .2em;
+}
+.cardParticipant p{
+    padding:0 .2em;
+}
+.cardParticipant {
+    border-left:2px solid #e0ebf9 ;
+    border-right:2px solid #e0ebf9 ;
+}
+.cardDuration p{
+    padding:0 .2em; 
+}
+.btn-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    background: #22559c;
+    -webkit-box-shadow: 0 3px 6px rgba(95,141,196,.2);
+    box-shadow: 0 3px 6px rgba(95,141,196,.2);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 11px 33.7px;
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+    text-decoration: none;
+    border: none;
+}
+
+.mockDataView{
+    width: 69%;
+    margin: auto;
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-around;
+}
+
+.practiceTest{
+    width: 70%;
+    margin:2em auto;
+    text-transform: uppercase;
+}
+.practiceTestCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 69%;
+    margin: auto;
+}
+.practiceCard{
+    max-width: 20em;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    background: transparent linear-gradient(180deg,#e0ebf9,#fff 54%,#fff) 0 0 no-repeat padding-box;
+    box-shadow: 0 10px 30px rgba(95,141,196,.2);
+    border-radius: 5px;
+    margin-top: 1.5em;
+}
+.companyCard{
+    max-width: 20em;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    background: transparent linear-gradient(180deg,#ffe4b6,#fff 54%,#fff) 0 0 no-repeat padding-box;
+    box-shadow: 0 10px 30px rgba(95,141,196,.2);
+    border-radius: 5px;
+    margin-top: 1.5em;
+}

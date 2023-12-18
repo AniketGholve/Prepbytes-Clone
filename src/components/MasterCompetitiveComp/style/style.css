@@ -1,0 +1,97 @@
+.masterCompetitiveHome {
+    margin-top: 7vh;
+}
+
+.btn-enrol {
+    background-color: #00a6eb;
+}
+
+.mch-heading {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: rgb(46, 145, 235);
+    line-height: 1.4em;
+}
+
+.mch-home {
+    display: flex;
+    width: 50%;
+    margin: 10% auto;
+    gap: 5%;
+}
+
+.mch-home div {
+    width: 60%;
+    line-height: 1.4em;
+}
+
+.mch-home div p {
+    margin: 1em 0;
+    line-height: 2rem;
+}
+
+.mch-info {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.mch-info-div {
+    display: flex;
+    padding: 2%;
+    align-items: center;
+    border-bottom: 4px solid #df3897;
+    border-right: 4px solid #df3897;
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.161);
+}
+
+.mch-info-div img {
+    height: 70%;
+    padding: 0 1em;
+    max-height: 4rem;
+}
+
+.mch-mentors-heading {
+    margin-top: 5%;
+    text-align: center;
+    color: #151414;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.mch-mentors-info {
+    text-align: center;
+    color: #151414;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 900px;
+}
+.mch-mentor-gallary{
+    width: 55%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em;
+}
+.mch-mentor-card {
+    display: flex;
+    gap: 10%;
+    width: 300px;
+    max-width: 300px;
+    box-shadow: 0px 1px 6px rgba(162, 161, 161, 0.346);
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+}
+
+.mch-mentor-card img {
+    width: 100%;
+}
+
+.mch-mentor-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
