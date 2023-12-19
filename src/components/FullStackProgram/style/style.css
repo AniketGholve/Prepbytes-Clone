@@ -1,0 +1,120 @@
+.fch-home-main{
+    background: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/development-programs/full-stack-bg.png")center bottom / cover fixed;
+    height: 75vh;
+}
+.fch-home{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    place-content: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 7vh;
+    height: 100%;
+}
+
+.fch-home-left{
+    width: 100%;
+    margin: auto;
+}
+.fch-home-left p{
+    letter-spacing: .24px;
+    color: #fff;
+}
+.fch-home-left-img{
+    width: 220px;
+    height: 98px;
+    border-radius: 10px;
+    background: transparent linear-gradient(90deg,#fff,#c7eaff) 0 0 no-repeat padding-box;
+}
+.fch-home-left h1 ,.fch-home-left h3{
+    color: #fff;
+    margin: 1em 0;
+}
+.fch-home-left button{
+    box-shadow: 0 3px 6px rgba(95,141,196,.2);
+    border-radius: 5px;
+    color: #ff219f;
+    border: 1px solid #ff219f;
+    background: transparent;
+    padding: 1em 3em;
+}
+.fch-home-right{
+    display: grid;
+    place-content: center;
+    margin-top: 3em;
+}
+.fch-home-right-heading{
+    font-size: 15px;
+    letter-spacing: 0;
+    color: #424242;
+    font-weight: 600;
+}
+.fch-home-right-text{
+    font-size: 14px;
+    letter-spacing: 0;
+    color: #858585;
+}
+.fch-home-right-div{
+    width: 300px;
+    height: 80px;
+    background: #fff 0 0 no-repeat padding-box;
+    box-shadow: 0 0 10px rgba(0,0,0,.1607843137254902);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: content-box;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.fch-batch{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    border: 0.5px solid #c2c2c2;
+    background: #f7f7f7 0 0 no-repeat padding-box;
+    padding: 1em 0;
+    color: #707070;
+}
+.price-enroll-now{
+ color: #f78077;   
+ text-align: center;
+}
+.btn-enroll-now{
+    background: #f78077;
+    border-radius: 6px;
+    padding:10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    min-width: 130px;
+}
+
+.fch-lang-tool{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: auto;
+}
+.fch-lang-tool-heading{
+    color: rgba(10,45,71,.92);
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.fch-lang-tool-text{
+    text-align: center;
+    color: rgba(106,127,134,.9294117647058824);
+}
+.fch-lang-tool-info{
+    display: grid;
+    place-content: center;
+}
+.fch-lang-tool-img img{
+    width: 90%;
+}

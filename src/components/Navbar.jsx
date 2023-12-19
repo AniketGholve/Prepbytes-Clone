@@ -16,10 +16,10 @@ const Navbar = () => {
                     <li className="coursesTab">Courses and Program <i className="fa-solid fa-caret-down"></i>
                         <ul className="dropdown2">
                             <li><Link to={"/master-competitive-programming"}>Master Competitive Programming</Link></li>
-                            <li><Link>Full Stack Program</Link></li>
+                            <li><Link to={"/online-full-stack-developer-mern-certification-program"}>Full Stack Program</Link></li>
                         </ul>
                     </li>
-                    <li><Link>Elevated Academy</Link></li>
+                    <li><Link to={"/mern-stack-web-development-career"}>Elevated Academy</Link></li>
                     <li><Link>Project</Link> </li>
                 </ul>
                 <div className="userInfo">
