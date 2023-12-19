@@ -64,8 +64,8 @@ const ElevationAcademyHome = () => {
                             <span className='dream-process-span2'>Application & Shortlisting</span>
                         </div>
                         <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>2</span>
-                            <span className='dream-process-span2'>Application & Shortlisting</span>
+                            <span className='dream-process-span1'>3</span>
+                            <span className='dream-process-span2'>Attend Free Webinar</span>
                         </div>
                         <div className='dream-process-div1'>
                             <span className='dream-process-span1'>4</span>
@@ -76,7 +76,106 @@ const ElevationAcademyHome = () => {
                             <span className='dream-process-span2'>Guaranteed Placement</span>
                         </div>
                     </div>
-                    <div></div>
+                    <div className='dream-process-info'>
+                        <div className='dream-process-info-div'>
+                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
+                        </div>
+                        <div className='dream-process-info-div'>
+                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
+                        </div>
+                        <div className='dream-process-info-div'>
+                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
+                        </div>
+                        <div className='dream-process-info-div'>
+                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 className='wp-academy'>Why PrepBytes Elevation Academy?</h1>
+            <div className='wp-academy-blog'>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+                <div className='wp-academy-card'>
+                    <div>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
+                        <h4>Live Learning</h4>
+                        <p>Master Mern Stack in Live Classes taken by Experts</p>
+                    </div>
+                </div>
+            </div>
+            <div className='ps-comp'>
+                <h1 className='ps-heading'>Program Syllabus</h1>
+                <p className='ps-heading'>Learn from the best and be prepared to crack full stack developer jobs</p>
+                <div className='ps-comp-div'>
+                    <h3 className='ps-comp-div-heading'>1st Week - 4th Week</h3>
+                    <div>
+                        <p className='ps-comp-div-para'><span className='ps-comp-div-num'>1</span><span>Frontend Development Basics</span><span className='ps-comp-div-num'>+</span></p>
+                    </div>
+                    <div className='ps-comp-tech-info'>
+                        <div>
+                            <p>Frontend Development Basics - HTML, CSS AND Github</p>
+                            <div className=''>
+                                <span>How websites work</span>
+                                <span>Web Development Overview - Advantages</span>
+                                <span>HTML Introduction</span>
+                                <span>Structure of Webpage</span>
+                                <span>HTML Tags</span>
+                                <span>Texts, Images, Videos</span>
+                                <span>Lists, Forms, Tables</span>
+                                <span>Links, Anchor tags</span>
+                                <span>HTML Divs</span>
+                                <span>Github</span>
+                                <span>CSS Introduction</span>
+                                <span>Inline vs Internal vs External styling</span>
+                                <span>CSS Display</span>
+                                <span>CSS Font Styling, background, margin, padding</span>
+                                <span>Styling Lists, Tables, Forms</span>
+                                <span>FontAwesome</span>
+                                <span>Transitionals, Transformations, Animations</span>
+                                <span>Styling button</span>
+                                <span>Tool tip, Box Sizing, Flex, Grid</span>
+                                <span>Projects</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-.elevationAcademyHome{
+.elevationAcademyHome {
     width: 65%;
     margin: auto;
     display: grid;
@@ -6,25 +6,30 @@
     margin-top: 7vh;
     background-color: rgb(253, 240, 215);
 }
-.elevationAcademyHomeInfo{
-    padding:20% 9%;
+
+.elevationAcademyHomeInfo {
+    padding: 20% 9%;
 }
-.elevationAcademyHomeInfo p{
+
+.elevationAcademyHomeInfo p {
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 18px;
     color: #424242;
 }
-.elevationAcademyHomeInfo ul{
+
+.elevationAcademyHomeInfo ul {
     list-style-type: none;
 }
-.elevationAcademyHomeInfo>h1{
+
+.elevationAcademyHomeInfo>h1 {
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 30px;
     color: #3e4041;
 }
-.elevationAcademyHomeBtn-1{
+
+.elevationAcademyHomeBtn-1 {
     margin-top: 20px;
     margin-right: 30px;
     background: #00a5ec 0 0 no-repeat padding-box;
@@ -36,9 +41,10 @@
     border-radius: 4px;
     font-size: 18px;
 }
-.elevationAcademyHomeBtn-2{
+
+.elevationAcademyHomeBtn-2 {
     background: transparent;
-    box-shadow: 0 3px 6px rgba(95,141,196,.2);
+    box-shadow: 0 3px 6px rgba(95, 141, 196, .2);
     border-radius: 5px;
     color: #00a5ec;
     border: 1px solid #00a5ec;
@@ -49,22 +55,25 @@
     font-size: 18px;
 }
 
-.elevationAcademyHomeImg{
+.elevationAcademyHomeImg {
     width: 100%;
     height: 100%;
     display: grid;
     place-content: center;
 }
-.elevationAcademyHomeImg img{
+
+.elevationAcademyHomeImg img {
     width: 100%;
 }
-.new_batch{
+
+.new_batch {
     display: flex;
     background: #e5f4fb 0 0 no-repeat padding-box;
     width: 65%;
     margin: auto;
 }
-.new_batch_leftHeading{
+
+.new_batch_leftHeading {
     letter-spacing: 0;
     color: #424242;
     font-size: 24px;
@@ -73,7 +82,8 @@
     margin-left: 20px;
     margin-right: 20px;
 }
-.new_batch_date{
+
+.new_batch_date {
     letter-spacing: 0;
     color: #f7f7f7;
     background: #00a5ec 0 0 no-repeat padding-box;
@@ -82,77 +92,94 @@
     font-size: 20px;
     font-weight: 600;
 }
-.new_batch > div{
-    padding:2em 2em 2em 0;
+
+.new_batch>div {
+    padding: 2em 2em 2em 0;
 }
-.eventInfo{
+
+.eventInfo {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.eventInfoHeading{
+
+.eventInfoHeading {
     color: #095170;
 }
-.eventInfoDate{
+
+.eventInfoDate {
     background: #d6f3ff 0 0 no-repeat padding-box;
     border: 0.5px dashed #00a5ec;
     padding: 0% 1em;
     border-radius: 5px;
 }
-.new_batch_events{
+
+.new_batch_events {
     display: flex;
     justify-content: space-between;
     width: 50%;
 }
-.eventInfoOdd::before{
+
+.eventInfoOdd::before {
     content: "";
     width: 190%;
     height: 2px;
-    background: transparent linear-gradient(90deg,#00a5ec,#99e0ff) 0 0 no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #00a5ec, #99e0ff) 0 0 no-repeat padding-box;
     position: relative;
     top: 30%;
     left: -125%;
     z-index: 0;
 }
-.eventInfoOdd::after{
+
+.eventInfoOdd::after {
     content: "";
     width: 190%;
     height: 2px;
-    background: transparent linear-gradient(90deg,#00a5ec,#99e0ff) 0 0 no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #00a5ec, #99e0ff) 0 0 no-repeat padding-box;
     position: relative;
     top: -70%;
     left: 125%;
     z-index: 0;
 }
-.dream-job-heading{
+
+.dream-job-heading {
     margin: 3rem 0;
     text-align: center;
     font: 30px;
     letter-spacing: 0;
     color: #424242;
 }
-.dream-process{
+
+.dream-process {
     display: flex;
+    justify-content: space-around;
 }
-.dream-process{
+
+.dream-process {
     width: 63%;
     margin: auto;
 }
-.dream-process-div1{
-   display: flex;
-   align-items: center;
-   width: 100%;
-   padding: 15px 0;
-   border: 0.5px solid #c2c2c2;
-   border-radius: 10px;
+.dream-process-div{
+    height: 100%;
+    margin: auto;
 }
-.dream-process-span1{
+.dream-process-div1 {
+    display: flex;
+    align-items: center;
+    width: 150%;
+    padding: 15px 0;
+    border: 0.5px solid #c2c2c2;
+    border-radius: 10px;
+    margin: 1em 0;
+}
+
+.dream-process-span1 {
     background-color: rgb(255, 251, 248);
     border: 1px dashed rgb(255, 158, 82);
     width: 45px;
     height: 40px;
-    box-shadow: 0 0 20px rgba(0,0,0,.1607843137254902);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1607843137254902);
     border-radius: 10px;
     color: #424242;
     font-size: 24px;
@@ -164,8 +191,112 @@
     position: relative;
     left: -22px;
 }
-.dream-process-span2{
+
+.dream-process-span2 {
     padding-right: 25px;
-    
-   text-align: center;
+    text-align: center;
+}
+
+.dream-process-info-div{
+    display: flex;
+    width: 50%;
+    height: 10vh;
+    align-items: center;
+    margin:2em auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.160);
+    padding:2em 2em;
+    border-radius: 4px;
+}
+
+.dream-process-info{
+    height: 100%;
+    margin: auto;
+}
+.dream-process-info-div img{
+    width: 100%;
+    height: 80%;
+}
+.wp-academy{
+    text-align: center;
+    margin:3% 0 ;
+}
+.wp-academy-card img{
+    padding: 1em;
+    background-color: #fdf0d7;
+    border-radius: 4px;
+}
+.wp-academy-blog{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 60%;
+    margin: auto;
+}
+.wp-academy-card {
+    box-shadow: 0 0 20px rgba(0,0,0,.1607843137254902);
+    border: 0.5px solid #c2c2c2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wp-academy-card p{
+    letter-spacing: 0;
+    color: #858585;
+    font-size: 16px;
+}
+.ps-heading{
+    text-align: center;
+}
+.ps-comp{
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+}
+.ps-comp-div-heading{
+    margin: 5%;
+    padding: 15px;
+    text-align: center;
+    background-color: #095170;
+    color: #fff;
+}
+.ps-comp-div-para{
+    display: grid;
+    width: 87%;
+    margin: auto;
+    grid-template-columns: 2% 80% 2%;
+    justify-content: space-between;
+    padding: 1em;
+    border:1px solid #c2c2c2;
+    border-left: 8px solid rgb(255, 134, 91) ;
+    border-radius: 4px;
+}
+.ps-comp-div-num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #095170;
+    padding: 5px;
+    box-sizing: content-box;
+}
+.ps-comp-tech-info{
+    width: 89%;
+    margin: auto;
+    border-left: 8px solid rgb(255, 134, 91) ;
+}
+.ps-comp-tech-info p{
+    margin: 30px 5px;
+    padding: 15px;
+    background: #e8f7ed;
+}
+.ps-comp-tech-info span{
+    display: inline-block;
+    border: 1px solid red;
+    color: #858585;
+    padding: 12px 8px;
+    margin: 10px;
+    background: #fff;
 }
