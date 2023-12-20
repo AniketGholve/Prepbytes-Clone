@@ -178,6 +178,48 @@ const ElevationAcademyHome = () => {
                     </div>
                 </div>
             </div>
+            <div className='placedStudent'>
+                <h1 className='placedStudentHeading'>Where our Students are placed</h1>
+                <p className='placedStudentPara'>"You guarantee hard work, We guarantee placements"</p>
+                <div className='placedCompany'>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
+                    </div>
+                    <div className='placedCompanyDiv'>
+                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

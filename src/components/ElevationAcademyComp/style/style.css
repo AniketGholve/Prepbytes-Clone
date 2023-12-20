@@ -300,3 +300,30 @@
     margin: 10px;
     background: #fff;
 }
+.placedStudent{
+    display: flex;
+    flex-direction: column;
+}
+.placedStudentHeading{
+    text-align: center;
+    margin:1em auto
+}
+.placedStudentPara{
+    text-align: center;
+    width: 15%;
+    margin: auto;
+    margin-bottom: 3em;
+}
+.placedCompany{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    place-content: center;
+    width: 50%;
+    margin: auto;
+}
+.placedCompanyDiv{
+    box-shadow: 0 10px 35px rgba(3, 3, 5, 0.165);
+    border-radius: 6px;
+    margin: 15px;
+    align-items: center;
+}
