@@ -94,7 +94,7 @@
 }
 
 .new_batch>div {
-    padding: 2em 2em 2em 0;
+    padding: 2em 0em 2em 0;
 }
 
 .eventInfo {
@@ -102,6 +102,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 33.33%;
 }
 
 .eventInfoHeading {
@@ -118,28 +119,28 @@
 .new_batch_events {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 65%;
 }
 
 .eventInfoOdd::before {
     content: "";
-    width: 190%;
+    width: 78%;
     height: 2px;
     background: transparent linear-gradient(90deg, #00a5ec, #99e0ff) 0 0 no-repeat padding-box;
     position: relative;
     top: 30%;
-    left: -125%;
+    right: 50%;
     z-index: 0;
 }
 
 .eventInfoOdd::after {
     content: "";
-    width: 190%;
+    width: 78%;
     height: 2px;
     background: transparent linear-gradient(90deg, #00a5ec, #99e0ff) 0 0 no-repeat padding-box;
     position: relative;
     top: -70%;
-    left: 125%;
+    left: 50%;
     z-index: 0;
 }
 
@@ -157,26 +158,59 @@
 }
 
 .dream-process {
-    width: 63%;
-    margin: auto;
+    width: 58%;
+    margin: 1em auto;
+    display: flex;
+
 }
-.dream-process-div{
+
+.dream-process-div {
     height: 100%;
     margin: auto;
 }
+
 .dream-process-div1 {
     display: flex;
     align-items: center;
-    width: 150%;
+    width: 25%;
+    height: 10%;
     padding: 15px 0;
     border: 0.5px solid #c2c2c2;
     border-radius: 10px;
-    margin: 1em 0;
+    margin: auto;
+    background-color: #fff;
+    position: relative;
 }
 
-.dream-process-span1 {
+.dream-process-div1::after {
+    content: "";
+    border: 1px solid #00a5ec;
+    position: absolute;
+    right: -38%;
+    z-index: -2;
+    width: 42%;
+}
+.dream-process-span1-yellow {
     background-color: rgb(255, 251, 248);
     border: 1px dashed rgb(255, 158, 82);
+}
+.dream-process-span1-purple {
+    background-color: rgb(255, 241, 253);;
+    border: 1px dashed rgb(192, 39, 175);
+}
+.dream-process-span1-red {
+    background-color: rgb(255, 242, 242);
+    border: 1px dashed red;
+}
+.dream-process-span1-blue {
+    background-color: rgb(226, 246, 255);
+    border: 1px dashed rgb(32, 142, 189);
+}
+.dream-process-span1-green {
+    background-color: rgb(231, 255, 240);
+    border: 1px dashed rgb(31, 194, 92);
+}
+.dream-process-span1 {
     width: 45px;
     height: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .1607843137254902);
@@ -196,43 +230,74 @@
     padding-right: 25px;
     text-align: center;
 }
+.dream-process-span2-yellow {
+    color: rgb(255, 158, 82);
+    font-weight: 900;
+}
+.dream-process-span2-red {
+    color: rgb(238, 45, 45);
+    font-weight: 900;
+}
+.dream-process-div1-red {
+    animation-name:fadeColor ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border: 0.5px solid rgb(238, 45, 45);;
+}
+.dream-process-span2-purple {
+    color: rgb(192, 39, 175);
+    font-weight: bold;
+}
+.dream-process-span2-blue {
+    color: rgb(32, 142, 189);
+    font-weight: bold;
+}
+.dream-process-span2-green {
+    color: rgb(31, 194, 92);
+    font-weight: bold;
+}
 
-.dream-process-info-div{
+.dream-process-info-div {
     display: flex;
     width: 50%;
     height: 10vh;
     align-items: center;
-    margin:2em auto;
-    box-shadow: 0 0 20px rgba(0,0,0,.160);
-    padding:2em 2em;
-    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .160);
+    padding: 1em 2em;
+    border-radius: 10px;
 }
 
-.dream-process-info{
+.dream-process-info {
     height: 100%;
     margin: auto;
 }
-.dream-process-info-div img{
+
+.dream-process-info-div img {
     width: 100%;
     height: 80%;
 }
-.wp-academy{
+
+.wp-academy {
     text-align: center;
-    margin:3% 0 ;
+    margin: 3% 0;
 }
-.wp-academy-card img{
+
+.wp-academy-card img {
     padding: 1em;
     background-color: #fdf0d7;
     border-radius: 4px;
 }
-.wp-academy-blog{
+
+.wp-academy-blog {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 60%;
     margin: auto;
 }
+
 .wp-academy-card {
-    box-shadow: 0 0 20px rgba(0,0,0,.1607843137254902);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1607843137254902);
     border: 0.5px solid #c2c2c2;
     border-radius: 10px;
     padding: 20px;
@@ -243,56 +308,111 @@
     justify-content: center;
     align-items: center;
 }
-.wp-academy-card p{
+
+.wp-academy-card p {
     letter-spacing: 0;
     color: #858585;
     font-size: 16px;
 }
-.ps-heading{
+
+.ps-heading {
     text-align: center;
 }
-.ps-comp{
+
+.ps-comp {
     width: 80%;
     margin: auto;
     margin-top: 5%;
 }
-.ps-comp-div-heading{
-    margin: 5%;
+
+.ps-comp-div-date {
+    margin: 3% 5%;
     padding: 15px;
     text-align: center;
-    background-color: #095170;
     color: #fff;
 }
-.ps-comp-div-para{
+.ps-comp-div-heading{
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 18px;
+}
+.ps-comp-div-pink{
+    background: rgb(247, 128, 119);
+}
+.ps-comp-div-color-pink{
+    color: rgb(247, 128, 119) !important;
+}
+.ps-comp-div-color-blue{
+    color: rgb(101, 187, 229) !important;
+}
+.ps-comp-div-blue{
+    background: rgb(101, 187, 229);
+}
+
+.ps-comp-div-yellow{
+    background: rgb(247, 182, 67);
+}
+.ps-comp-div-color-yellow{
+    color: rgb(247, 182, 67) !important;
+}
+
+.ps-comp-div-para {
     display: grid;
     width: 87%;
     margin: auto;
     grid-template-columns: 2% 80% 2%;
     justify-content: space-between;
     padding: 1em;
-    border:1px solid #c2c2c2;
-    border-left: 8px solid rgb(255, 134, 91) ;
+    border: 1px solid #c2c2c2;
+    border-left: 8px solid rgb(255, 134, 91);
     border-radius: 4px;
 }
-.ps-comp-div-num{
+
+.ps-comp-div-num {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #095170;
-    padding: 5px;
-    box-sizing: content-box;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    width: 50%;
 }
-.ps-comp-tech-info{
-    width: 89%;
+.ps-comp-div-border-yellow{
+    border-left: 8px solid rgb(247, 182, 67)  !important;
+}
+.ps-comp-div-border-pink{
+    border-left: 8px solid rgb(255, 134, 91) !important;
+}
+.ps-comp-div-border-blue{
+    border-left: 8px solid rgb(101, 187, 229)  !important;
+}
+.ps-comp-span-border-yellow{
+    border: 1px solid rgb(247, 182, 67)  !important;
+}
+.ps-comp-span-border-pink{
+    border: 1px solid rgb(255, 134, 91) !important;
+}
+.ps-comp-span-border-blue{
+    border: 1px solid rgb(101, 187, 229)  !important;
+}
+
+.ps-comp-tech-info {
+    width: 89.1%;
     margin: auto;
-    border-left: 8px solid rgb(255, 134, 91) ;
+    transition: max-height .6s ease;
+    max-height: 444px;
 }
-.ps-comp-tech-info p{
-    margin: 30px 5px;
+
+.ps-comp-tech-info p {
+    margin: 30px 0px;
     padding: 15px;
     background: #e8f7ed;
 }
-.ps-comp-tech-info span{
+
+.ps-comp-tech-info span {
     display: inline-block;
     border: 1px solid red;
     color: #858585;
@@ -300,30 +420,84 @@
     margin: 10px;
     background: #fff;
 }
-.placedStudent{
+
+.placedStudent {
     display: flex;
     flex-direction: column;
 }
-.placedStudentHeading{
+
+.placedStudentHeading {
     text-align: center;
-    margin:1em auto
+    margin: 2em auto 0.1em;
+    font-size:40px;
+    color: #3e4041;
 }
-.placedStudentPara{
+
+.placedStudentPara {
     text-align: center;
     width: 15%;
     margin: auto;
     margin-bottom: 3em;
+    text-align: center;
+    color: #858585;
+    font-size: 16px;
 }
-.placedCompany{
+
+.placedCompany {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     place-content: center;
     width: 50%;
     margin: auto;
 }
-.placedCompanyDiv{
+
+.placedCompanyDiv {
     box-shadow: 0 10px 35px rgba(3, 3, 5, 0.165);
     border-radius: 6px;
     margin: 15px;
     align-items: center;
+}
+.upcomingBatch{
+    background: #fdf0d7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 17.5em;
+    margin: 2em 0;
+}
+.upcomingBatchHeading{
+    font-size: 22px;
+    color: #424242;
+    margin-bottom: 10px;
+    width: 70%;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.upcomingBatchBtn{
+    border-radius: 4px;
+    border: none;
+    padding: 10px 16px;
+    background: #f78077;
+    color: #f7f7f7;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.d-none{
+    display: none;
+}
+
+.ps-comp-div-toggle{
+    width: 50%;
+    border-radius: 50%;
+    background: #e8f7ed;
+}
+
+@keyframes fadeColor {
+    from{
+        box-shadow: 2px 2px 20px rgb(235, 44, 44);
+    }
+    to{
+        box-shadow: 2px 2px 10px rgb(168, 117, 117);
+    }
 }

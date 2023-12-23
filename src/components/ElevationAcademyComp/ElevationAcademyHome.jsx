@@ -1,5 +1,19 @@
+import Slider from 'react-slick'
+import AcademyCard from './AcademyCard'
+import DreamJob from './DreamJob'
+import NewEvent from './NewEvent'
+import { academyCardData, dreamJobData, newEventData, placedCompanyImg, studnetReview, syllabusData } from './data/data'
 import './style/style.css'
+import Syllabus from './Syllabus'
 const ElevationAcademyHome = () => {
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        className: 'slides-info'
+    };
     return (
         <div>
             <div className="elevationAcademyHome">
@@ -34,190 +48,75 @@ const ElevationAcademyHome = () => {
                     <p className='new_batch_date'>Batch Starting: 1st May 2023</p>
                 </div>
                 <div className='new_batch_events'>
-                    <div className='eventInfo'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/free_class.webp" alt="" />
-                        <p className='eventInfoHeading'>Free Webinar</p>
-                        <p className='eventInfoDate'>17th April</p>
-                    </div>
-                    <div className='eventInfo eventInfoOdd'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/free_class.webp" alt="" />
-                        <p className='eventInfoHeading'>Free Webinar</p>
-                        <p className='eventInfoDate'>17th April</p>
-                    </div>
-                    <div className='eventInfo'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/free_class.webp" alt="" />
-                        <p className='eventInfoHeading'>Free Webinar</p>
-                        <p className='eventInfoDate'>17th April</p>
-                    </div>
+                    {
+                        newEventData.map((item, key) => <NewEvent key={key} id={item.id} heading={item.heading} img={item.img} date={item.date} />)
+                    }
                 </div>
             </div>
             <div>
                 <h1 className='dream-job-heading'>How will you reach to your dream Job?</h1>
-                <div className='dream-process'>
-                    <div className='dream-process-div'>
-                        <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>1</span>
-                            <span className='dream-process-span2'>Application & Shortlisting</span>
-                        </div>
-                        <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>2</span>
-                            <span className='dream-process-span2'>Application & Shortlisting</span>
-                        </div>
-                        <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>3</span>
-                            <span className='dream-process-span2'>Attend Free Webinar</span>
-                        </div>
-                        <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>4</span>
-                            <span className='dream-process-span2'>7 Months Program</span>
-                        </div>
-                        <div className='dream-process-div1'>
-                            <span className='dream-process-span1'>5</span>
-                            <span className='dream-process-span2'>Guaranteed Placement</span>
-                        </div>
-                    </div>
-                    <div className='dream-process-info'>
-                        <div className='dream-process-info-div'>
-                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
-                        </div>
-                        <div className='dream-process-info-div'>
-                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
-                        </div>
-                        <div className='dream-process-info-div'>
-                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
-                        </div>
-                        <div className='dream-process-info-div'>
-                            <p>Apply, fill the form & wait till we review your application. You will be selected based on the eligibility criteria (2023, 2022 & 2021 passouts)</p>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Application%2B%2BShortlisting.webp" alt="" />
-                        </div>
-                    </div>
+                <div >
+                    {
+                        dreamJobData.map((item, key) => <DreamJob key={key} id={item.id} heading={item.heading} info={item.info} img={item.img} color={item.color} />)
+                    }
                 </div>
             </div>
             <h1 className='wp-academy'>Why PrepBytes Elevation Academy?</h1>
             <div className='wp-academy-blog'>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
-                <div className='wp-academy-card'>
-                    <div>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Live+Learning.webp" alt="" />
-                        <h4>Live Learning</h4>
-                        <p>Master Mern Stack in Live Classes taken by Experts</p>
-                    </div>
-                </div>
+                {
+                    academyCardData.map((item, key) => <AcademyCard key={key} heading={item.heading} info={item.info} img={item.img} />)
+                }
             </div>
             <div className='ps-comp'>
                 <h1 className='ps-heading'>Program Syllabus</h1>
                 <p className='ps-heading'>Learn from the best and be prepared to crack full stack developer jobs</p>
-                <div className='ps-comp-div'>
-                    <h3 className='ps-comp-div-heading'>1st Week - 4th Week</h3>
-                    <div>
-                        <p className='ps-comp-div-para'><span className='ps-comp-div-num'>1</span><span>Frontend Development Basics</span><span className='ps-comp-div-num'>+</span></p>
-                    </div>
-                    <div className='ps-comp-tech-info'>
-                        <div>
-                            <p>Frontend Development Basics - HTML, CSS AND Github</p>
-                            <div className=''>
-                                <span>How websites work</span>
-                                <span>Web Development Overview - Advantages</span>
-                                <span>HTML Introduction</span>
-                                <span>Structure of Webpage</span>
-                                <span>HTML Tags</span>
-                                <span>Texts, Images, Videos</span>
-                                <span>Lists, Forms, Tables</span>
-                                <span>Links, Anchor tags</span>
-                                <span>HTML Divs</span>
-                                <span>Github</span>
-                                <span>CSS Introduction</span>
-                                <span>Inline vs Internal vs External styling</span>
-                                <span>CSS Display</span>
-                                <span>CSS Font Styling, background, margin, padding</span>
-                                <span>Styling Lists, Tables, Forms</span>
-                                <span>FontAwesome</span>
-                                <span>Transitionals, Transformations, Animations</span>
-                                <span>Styling button</span>
-                                <span>Tool tip, Box Sizing, Flex, Grid</span>
-                                <span>Projects</span>
-                            </div>
-                        </div>
-                    </div>
+                {
+                    syllabusData.map((item, key) => <Syllabus key={key} id={item.id} dates={item.dates} heading={item.heading} subHeading={item.subHeading} topic={item.topic} color={item.color} />)
+                }
+            </div>
+            <div className='upcomingBatch'>
+                <div>
+                    <p className='upcomingBatchHeading'>Upcoming Elevation Academy Batch - Full Stack Web Development Career - May 2023 now OPEN</p>
+                    <button className='upcomingBatchBtn'>Apply Now</button>
                 </div>
+                <div>
+                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/batches-back.webp" alt="" />
+                </div>
+            </div>
+
+            <div className='student-review'>
+                <p className='student-review-heading1'>Testimonials</p>
+                <p className='student-review-heading2'>Our Students Speaks</p>
+                <Slider {...settings}>
+                    {
+                        studnetReview.map((item, key) => < >
+                            <div className='student-review-div'>
+                                <div className='student-review-div-info'>
+                                    <img src={item.img} alt="" />
+                                    <div>
+                                        <p className='student-name-heading'>{item.name}</p>
+                                        <p className=''>{item.company}  </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className='student-reviews-para'>{item.info}</p>
+                                </div>
+                            </div>
+                        </>)
+                    }
+                </Slider>
             </div>
             <div className='placedStudent'>
                 <h1 className='placedStudentHeading'>Where our Students are placed</h1>
-                <p className='placedStudentPara'>"You guarantee hard work, We guarantee placements"</p>
+                <p className='placedStudentPara'>You guarantee hard work, We guarantee placements</p>
                 <div className='placedCompany'>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/Paytm_Logo.webp" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/info_edge_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/SAP_Logo.svg" alt="" />
-                    </div>
-                    <div className='placedCompanyDiv'>
-                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/ISA/Intuit_Logo.svg" alt="" />
-                    </div>
+                    {
+                        placedCompanyImg.map((item, key) =>
+                            <div className='placedCompanyDiv' key={key}>
+                                <img src={item} alt="" />
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>

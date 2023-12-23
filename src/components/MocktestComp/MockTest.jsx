@@ -1,4 +1,5 @@
 import Mockcard from "./Mockcard"
+import { companyTest, featureMock, mockTest } from "./data/data"
 import "./style/mock.css"
 
 const MockTest = () => {
@@ -15,57 +16,28 @@ const MockTest = () => {
                 <p className="pastMock">PAST MOCK TEST</p>
             </div>
             <div className="mockDataView">
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
-                <Mockcard />
+                {
+                    featureMock.map((item, key) => <Mockcard key={key} date={item.date} name={item.name} duration={item.duration} participants={item.participants} img={item.img}/>)
+                }
             </div>
             <div className="practiceTest">
                 <p className="mockHeading">Practice Tests</p>
                 <p className="pastMock">Topic Wise</p>
             </div>
             <div className="practiceTestCard">
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
-                <Mockcard practice={"topic"} />
+                {
+                    mockTest.map((item, key) =>
+                        <Mockcard practice={"topic"} name={item.topic} key={key}  img={item.img}/>
+                    )
+                }
             </div>
             <div className="practiceTest">
                 <p className="pastMock">Company Wise</p>
             </div>
             <div className="practiceTestCard">
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
-                <Mockcard practice={"company"} />
+                {
+                    companyTest.map((item,key)=><Mockcard practice={"company"} key={key} img={item}/>)
+                }
             </div>
         </div>
     )
