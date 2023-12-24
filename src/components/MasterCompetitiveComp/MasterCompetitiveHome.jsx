@@ -2,6 +2,8 @@ import Slider from 'react-slick'
 import './style/style.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { endOfCourseData, infoData, mchInfoData, mentorData, quickInfo, studentReview } from './data/data';
+import { useState } from 'react';
 const MasterCompetitiveHome = () => {
     var settings = {
         dots: false,
@@ -11,6 +13,7 @@ const MasterCompetitiveHome = () => {
         slidesToScroll: 1,
         className: 'slides'
     };
+    let [toggleData, setToggleView] = useState("language");
     return (
         <div className="masterCompetitiveHome">
             <div className='mch-home'>
@@ -24,57 +27,33 @@ const MasterCompetitiveHome = () => {
                 </div>
             </div>
             <div className='mch-info'>
-                <div className='mch-info-div'>
-                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-usp-one.webp" alt="" />
-                    <p>9 months intensive bootcamp</p>
-                </div>
-                <div className='mch-info-div'>
-                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-usp-one.webp" alt="" />
-                    <p>9 months intensive bootcamp</p>
-                </div>
-                <div className='mch-info-div'>
-                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-usp-one.webp" alt="" />
-                    <p>9 months intensive bootcamp</p>
-                </div>
-                <div className='mch-info-div'>
-                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-usp-one.webp" alt="" />
-                    <p>9 months intensive bootcamp</p>
-                </div>
+                {
+                    quickInfo.map((item, key) => {
+                        return <div className={`mch-info-div mch-info-div-${item.color}`} key={key}>
+                            <img src={item.img} alt="" />
+                            <p>{item.info}</p>
+                        </div>
+                    })
+                }
             </div>
             <div>
                 <h5 className='mch-mentors-heading'>Get Guidance From Industry Leading Mentors</h5>
                 <p className='mch-mentors-info'>Other Mentors You Will Be Interacting With</p>
                 <div className='mch-mentor-gallary'>
-                    <div className='mch-mentor-card'>
-                        <div className='mch-mentor-img'>
-                            <img className='mch-mentor-img' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/Student+Placed+Section/Mentor_Mamta.webp" alt="" />
-                        </div>
-                        <div>
-                            <h3>Mamta</h3>
-                            <p>Co-Founder, PrepBytes</p>
-                            <img className='companyImg' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Mentor-Company1.webp" alt="" />
-                        </div>
-                    </div>
-                    <div className='mch-mentor-card'>
-                        <div className='mch-mentor-img'>
-                            <img className='mch-mentor-img' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/Student+Placed+Section/Mentor_Mamta.webp" alt="" />
-                        </div>
-                        <div>
-                            <h3>Mamta</h3>
-                            <p>Co-Founder, PrepBytes</p>
-                            <img className='companyImg' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Mentor-Company1.webp" alt="" />
-                        </div>
-                    </div>
-                    <div className='mch-mentor-card'>
-                        <div className='mch-mentor-img'>
-                            <img className='mch-mentor-img' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/Student+Placed+Section/Mentor_Mamta.webp" alt="" />
-                        </div>
-                        <div>
-                            <h3>Mamta</h3>
-                            <p>Co-Founder, PrepBytes</p>
-                            <img className='companyImg' src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Mentor-Company1.webp" alt="" />
-                        </div>
-                    </div>
+                    {
+                        mentorData.map((item, key) => {
+                            return <div className='mch-mentor-card' key={key}>
+                                <div className='mch-mentor-img'>
+                                    <img className='mch-mentor-img' src={item.photo} alt="" />
+                                </div>
+                                <div>
+                                    <h3>{item.name}</h3>
+                                    <p>{item.position}</p>
+                                    <img className='companyImg' src={item.companyImg} alt="" />
+                                </div>
+                            </div>
+                        })
+                    }
                 </div>
             </div>
             <div>
@@ -86,94 +65,21 @@ const MasterCompetitiveHome = () => {
                         <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Vector.svg" alt='' />
                     </div>
                     <ul className='courseFeatureDetailsUl'>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsEvenDiv'>
-                                <div className='courseFeatureDetailsDiv'>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv courseDetailsEvenDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsOddDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsEvenDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsOddDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsEvenDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsOddDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsEvenDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className='courseFeatureDetails courseDetailsOddDiv'>
-                                <div className='courseFeatureDetailsDiv '>
-                                    <h5>Personalised Program</h5>
-                                    <p>Master your skills from where you are, with India only personalised program </p>
-                                </div>
-                                <div className='courseFeatureImgDiv'>
-                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/Course+Feature+Section/Icons_Personalised+Program.webp" alt="" />
-                                </div>
-                            </div>
-                        </li>
+                        {
+                            mchInfoData.map((item, key) => {
+                                return <li key={key}>
+                                    <div className={key % 2 == 0 ? 'courseFeatureDetails courseDetailsEvenDiv' : 'courseFeatureDetails courseDetailsOddDiv'}>
+                                        <div className='courseFeatureDetailsDiv'>
+                                            <h5>{item.heading}</h5>
+                                            <p>{item.info}</p>
+                                        </div>
+                                        <div className='courseFeatureImgDiv courseDetailsEvenDiv'>
+                                            <img src={item.image} alt="" />
+                                        </div>
+                                    </div>
+                                </li>
+                            })
+                        }
                     </ul>
                 </div>
             </div>
@@ -198,17 +104,17 @@ const MasterCompetitiveHome = () => {
             <h1 className='mch-coding-context'>Curriculum</h1>
             <div className='mch-curriculum'>
                 <div>
-                    <div className="courseSyllabus-div">
+                    <div className="courseSyllabus-div" onClick={() => setToggleView("language")}>
                         <img className="courseSyllabus-img" src="https://prepbytes-uat-images.s3.ap-south-1.amazonaws.com/13.webp" alt="Subject Image" />
                         <div className="courseSyllabus-text">Language Fundamentals (Choose any one of C/C++/Java/Python)</div>
                     </div>
-                    <div className="courseSyllabus-div">
-                        <img className="courseSyllabus-img" src="https://prepbytes-uat-images.s3.ap-south-1.amazonaws.com/13.webp" alt="Subject Image" />
-                        <div className="courseSyllabus-text">Language Fundamentals (Choose any one of C/C++/Java/Python)</div>
+                    <div className="courseSyllabus-div" onClick={() => setToggleView("dsa")}>
+                        <img className="courseSyllabus-img" src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Icon2.webp" alt="Subject Image" />
+                        <div className="courseSyllabus-text">Data Structures and Algorithms</div>
                     </div>
-                    <div className="courseSyllabus-div">
-                        <img className="courseSyllabus-img" src="https://prepbytes-uat-images.s3.ap-south-1.amazonaws.com/13.webp" alt="Subject Image" />
-                        <div className="courseSyllabus-text">Language Fundamentals (Choose any one of C/C++/Java/Python)</div>
+                    <div className="courseSyllabus-div" onClick={() => setToggleView("compMath")}>
+                        <img className="courseSyllabus-img" src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Icon3.webp" alt="Subject Image" />
+                        <div className="courseSyllabus-text">Competitive Maths</div>
                     </div>
                     <div className='courseSyllabus-div-img'>
                         <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Curriculum-Image.webp" alt="" />
@@ -216,24 +122,9 @@ const MasterCompetitiveHome = () => {
                 </div>
                 <div className='courseDataList'>
                     <ul>
-                        <li className='mch-topic-list'>C/C++/Java/Python Overview</li>
-                        <li className='mch-topic-list'>Logic Building</li>
-                        <li className='mch-topic-list'>Data Types</li>
-                        <li className='mch-topic-list'>Loops and Conditions</li>
-                        <li className='mch-topic-list'>Pattern Programming</li>
-                        <li className='mch-topic-list'>Operators and Expressions</li>
-                        <li className='mch-topic-list'>Input/Output</li>
-                        <li className='mch-topic-list'>Functions</li>
-                        <li className='mch-topic-list'>Functions and OOPs(Python)</li>
-                        <li className='mch-topic-list'>Pointers(C/C++)</li>
-                        <li className='mch-topic-list'>Arrays</li>
-                        <li className='mch-topic-list'>Structures</li>
-                        <li className='mch-topic-list'>Character Arrays and Strings</li>
-                        <li className='mch-topic-list'>Recursion</li>
-                        <li className='mch-topic-list'>Bit Manipulation</li>
-                        <li className='mch-topic-list'>STLs(C++)</li>
-                        <li className='mch-topic-list'>Collections (Java)</li>
-                        <li className='mch-topic-list'>Set, List, Tuples, Dictionary(Python)</li>
+                        {
+                            infoData[toggleData].map((item, key) => <li className='mch-topic-list' key={key}>{item}</li>)
+                        }
                     </ul>
                 </div>
             </div>
@@ -258,81 +149,25 @@ const MasterCompetitiveHome = () => {
             <div>
                 <h1 className='mch-coding-context'>This Might Be You</h1>
                 <Slider  {...settings} style={{ width: "60%", margin: "auto" }}>
-                    <div className='mch-dream-card'>
-                        <div className='mch-dream-name'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
-                            <h3 className=''>Shivam Gupta</h3>
-                        </div>
-                        <div className='mch-dream-info'>
-                            <p>My coding experience has improved very much. After joining the program, I am able to write optimized code.  The mentors are very helpful. They are always concerned about the students and they explain really well. The lectures are also very simple to understand and gives a clear idea.</p>
-                        </div>
-                        <div className='mch-dream-person'>
-                            <img src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/full-stack/testimonial/Shivam+Gupta.svg" alt="" />
-                            <div className=''>
-                                <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
+                    {
+                        studentReview.map((item, key) => {
+                            return <div key={key} className='mch-dream-card'>
+                                <div className='mch-dream-name'>
+                                    <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
+                                    <h3 className=''>{item.heading}</h3>
+                                </div>
+                                <div className='mch-dream-info'>
+                                    <p>{item.para}</p>
+                                </div>
+                                <div className='mch-dream-person'>
+                                    <img src={item.img_src} alt="" />
+                                    <div className=''>
+                                        <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className='mch-dream-card'>
-                        <div className='mch-dream-name'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
-                            <h3 className=''>Shivam Gupta</h3>
-                        </div>
-                        <div className='mch-dream-info'>
-                            <p>My coding experience has improved very much. After joining the program, I am able to write optimized code.  The mentors are very helpful. They are always concerned about the students and they explain really well. The lectures are also very simple to understand and gives a clear idea.</p>
-                        </div>
-                        <div className='mch-dream-person'>
-                            <img src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/full-stack/testimonial/Shivam+Gupta.svg" alt="" />
-                            <div className=''>
-                                <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mch-dream-card'>
-                        <div className='mch-dream-name'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
-                            <h3 className=''>Shivam Gupta</h3>
-                        </div>
-                        <div className='mch-dream-info'>
-                            <p>My coding experience has improved very much. After joining the program, I am able to write optimized code.  The mentors are very helpful. They are always concerned about the students and they explain really well. The lectures are also very simple to understand and gives a clear idea.</p>
-                        </div>
-                        <div className='mch-dream-person'>
-                            <img src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/full-stack/testimonial/Shivam+Gupta.svg" alt="" />
-                            <div className=''>
-                                <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mch-dream-card'>
-                        <div className='mch-dream-name'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
-                            <h3 className=''>Shivam Gupta</h3>
-                        </div>
-                        <div className='mch-dream-info'>
-                            <p>My coding experience has improved very much. After joining the program, I am able to write optimized code.  The mentors are very helpful. They are always concerned about the students and they explain really well. The lectures are also very simple to understand and gives a clear idea.</p>
-                        </div>
-                        <div className='mch-dream-person'>
-                            <img src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/full-stack/testimonial/Shivam+Gupta.svg" alt="" />
-                            <div className=''>
-                                <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mch-dream-card'>
-                        <div className='mch-dream-name'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote1.webp" alt="" />
-                            <h3 className=''>Shivam Gupta</h3>
-                        </div>
-                        <div className='mch-dream-info'>
-                            <p>My coding experience has improved very much. After joining the program, I am able to write optimized code.  The mentors are very helpful. They are always concerned about the students and they explain really well. The lectures are also very simple to understand and gives a clear idea.</p>
-                        </div>
-                        <div className='mch-dream-person'>
-                            <img src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/full-stack/testimonial/Shivam+Gupta.svg" alt="" />
-                            <div className=''>
-                                <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
+                        })
+                    }
                 </Slider>
             </div>
             <div className='courseEnd'>
@@ -342,30 +177,16 @@ const MasterCompetitiveHome = () => {
                         <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Vecto2.webp" alt="" />
                     </div>
                     <div className='courseEndInfo'>
-                        <div className='courseEndDivInfo'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/1.webp" alt="" />
-                            <div>
-                                <h5>4 star and above in CodeChef</h5>
-                            </div>
-                        </div>
-                        <div className='courseEndDivInfo'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/1.webp" alt="" />
-                            <div>
-                                <h5>4 star and above in CodeChef</h5>
-                            </div>
-                        </div>
-                        <div className='courseEndDivInfo'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/1.webp" alt="" />
-                            <div>
-                                <h5>4 star and above in CodeChef</h5>
-                            </div>
-                        </div>
-                        <div className='courseEndDivInfo'>
-                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/1.webp" alt="" />
-                            <div>
-                                <h5>4 star and above in CodeChef</h5>
-                            </div>
-                        </div>
+                        {
+                            endOfCourseData.map((item, key) => {
+                                return <div className={`courseEndDivInfo courseEndDivInfo-${item.color}`} key={key}>
+                                    <img src={item.imageSrc} alt="" />
+                                    <div>
+                                        <h5>{item.content}</h5>
+                                    </div>
+                                </div>
+                            })
+                        }
                     </div>
                 </div>
             </div>
