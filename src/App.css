@@ -926,10 +926,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0% 0 5em;
 }
 .mostPopularBlog{
     background-color: #fff;
     width: 100%;
+    height: 500px;
 }
 .mostPopularBlogs h1{
     text-align: center;
@@ -941,6 +943,7 @@
 }
 .mostPopularBlog img{
     width: 100%;
+    height: 50%;
 }
 .mostPopularBlogsGallary{
     width: 60%;
@@ -951,10 +954,60 @@
 .mostPopularBlog p{
     margin: 2em 2em 1em;
     font-weight: 600;
+    height: 20%;
 }
 .readMore{
     color: #03A6EC ;
     font-weight: 900 !important;
     font-size: 20px;
     text-align: center;
+}
+.callBackDiv{
+    display: flex;
+    width: 50%;
+    margin:6em auto; 
+    background: #fff;
+    gap: 20px;  
+    box-shadow: 0 3px 35px rgba(0,0,0,.1607843137254902);
+    padding: 3em;
+}
+.callBackForm form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+.callBackDiv div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.callBackDiv div img{
+    width: 100%;
+}
+.callBackDiv div p{
+    width: 100%;
+    text-align: center;
+}
+.callBackDiv div h1{
+    width: 100%;
+    text-align: center;
+}
+.callBackForm form input,.callBackForm form textarea ,.callBackForm form button{ 
+    padding: 1em;
+    margin: 1em;
+}
+.callBackDiv-img{
+    margin-top: 1em;
+}
+.callBackDiv-para{
+    margin-top: 1em;
+}
+.callBackDiv-Btn{
+    background-color: #f78077;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.9em;
 }

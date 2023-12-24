@@ -296,7 +296,7 @@ const Home = () => {
             </section>
             <section>
                 <h1 className="mentors_colleges_heading">PrepBytes for <span>Mentors & Colleges </span></h1>
-                <p className="mentors_college_para">"Join PrepBytes in the journey to reach more colleges and mentor more students"</p>
+                <p className="mentors_college_para">Join PrepBytes in the journey to reach more colleges and mentor more students</p>
                 <div className="mentor_college_cards">
                     <div className="mentor_college_Card">
                         <div>
@@ -334,6 +334,26 @@ const Home = () => {
                             <img src="https://blog-images-upload.s3.ap-south-1.amazonaws.com/blog_top_50_interview_questions_answers.png" alt="" />
                             <p>Lyrics from the famous track aptly describes the situation of every fresher when it comes to facing the interview</p>
                             <p className="readMore">Read Now</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <div className="callBackDiv">
+                        <div>
+                            <h1>Talk to our experts</h1>
+                            <p className="callBackDiv-para">Still Confused how PrepBytes can help you achieve your dream? Talk to our experts</p>
+                            <img className="callBackDiv-img" src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/call_back.svg" alt="" />
+                        </div>
+                        <div className="callBackForm">
+                            <form>
+                                <input type="text" placeholder="Name"/>
+                                <input type="text" placeholder="Email"/>
+                                <input type="text" placeholder="Phone"/>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Query"></textarea>
+                                <button className="callBackDiv-Btn">Request a call back</button>
+                            </form>
                         </div>
                     </div>
                 </div>
