@@ -1,9 +1,26 @@
 import { useRef } from "react"
+import { mentorsData, questionData } from "./data/data"
 
 const Home = () => {
     let ref = useRef()
     function handleClick() {
         ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    function checkQuiz(e) {
+        e.preventDefault()
+        const data = e.target.querySelector('input[name="answer"]:checked')
+        const data_unchecked = e.target.querySelectorAll('input[name="answer"]')
+        console.log(data_unchecked)
+        data_unchecked.forEach((item) => {
+            item.parentElement.classList.remove("border-red")
+            item.parentElement.classList.remove("border-green")
+        })
+        if (data.value === "do-while") {
+            data.parentElement.classList.add("border-green")
+        }
+        else {
+            data.parentElement.classList.add("border-red")
+        }
     }
     return (
         <>
@@ -217,6 +234,109 @@ const Home = () => {
             </section>
             <section className="placedStudent">
                 <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/you_could_be_the(web_1366).png" alt="" />
+            </section>
+            <section>
+                <h1 className="mentor_heading">PrepBytes Mentors</h1>
+                <p className="mentor_para">PrepBytes students get mentored by industry experts who have achieved in their careers and are passionate about helping students achieve their dream.</p>
+                <div className="mentor_card_gallary">
+                    {
+                        mentorsData.map((item, key) => {
+                            return <div className="mentor_card" key={key}>
+                                <div className="mentor_bg_img">
+                                    <img src={item.image} alt="" />
+                                </div>
+                                <div className="mentor-div-info">
+                                    <div>
+                                        <h4>{item.name}</h4>
+                                        <p>{item.role}</p>
+                                    </div>
+                                    <p className="mentor-div-info-para">{item.info}</p>
+                                    <span className="mentor-div-info-company">
+                                        <img src={item.company} alt="" />
+                                    </span>
+                                </div>
+                            </div>
+                        })
+                    }
+                </div>
+            </section>
+            <section>
+                <div className="home-quiz">
+                    <h1 className="home-quiz-heading">Can you solve these questions?</h1>
+                    {
+                        <div className="home-quiz-div">
+                            <h4>{questionData[0].question}</h4>
+                            <form onSubmit={checkQuiz}>
+                                <div className="home-quiz-answer">
+                                    {
+                                        questionData[0].options.map((item, key) => {
+                                            return <div className="home-quiz-answer-div" key={key}>
+                                                <input type="radio" name="answer" id={item} value={item} />
+                                                <label htmlFor={item}>{item}</label>
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                                <button className="quiz-submit-btn" >Submit Answer</button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </section>
+            <section>
+                <div className="collegeRepresent">
+                    <div className="collegeRepresent-div">
+                        <h3 className="collegeRepresent_btn-title">Want to represent your college?</h3>
+                        <div className="collegeRepresent_btn-text">
+                            <span>Join <strong>PrepBytes Campus Business Manager Internship program.</strong></span>
+                        </div>
+                        <button className="collegeRepresent_btn">Join Now</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1 className="mentors_colleges_heading">PrepBytes for <span>Mentors & Colleges </span></h1>
+                <p className="mentors_college_para">"Join PrepBytes in the journey to reach more colleges and mentor more students"</p>
+                <div className="mentor_college_cards">
+                    <div className="mentor_college_Card">
+                        <div>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/be_a_part_of_mentors.png" alt="" />
+                        </div>
+                        <h3>Be a part of growing Mentor Community of PrepBytes</h3>
+                        <p>We look forward to industry experts who have a passion for teaching, mentoring & making students future-ready</p>
+                        <button>Know More</button>
+                    </div>
+                    <div className="mentor_college_Card">
+                        <div>
+                            <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/futuristic_algo.png" alt="" />
+                        </div>
+                        <h3>Futuristic ALGO-driven Personalised learning module for your college</h3>
+                        <p>Every Student is different, hence their Learning should also be. Get in touch with to understand how PrepBytes can help students in your college</p>
+                        <button>Know More</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div className="mostPopularBlogs">
+                    <h1>Most Popular Blog</h1>
+                    <div className="mostPopularBlogsGallary">
+                        <div className="mostPopularBlog">
+                            <img src="https://blog-images-upload.s3.ap-south-1.amazonaws.com/blog_top_50_interview_questions_answers.png" alt="" />
+                            <p>Top 50 C Programming Interview Questions and Answers</p>
+                            <p className="readMore">Read Now</p>
+                        </div>
+                        <div className="mostPopularBlog">
+                            <img src="https://s3.ap-south-1.amazonaws.com/blog-images-upload/blog_vinit_story.png" alt="" />
+                            <p>Motivational Story : He got his first placement success after being rejected by 22 companies</p>
+                            <p className="readMore">Read Now</p>
+                        </div>
+                        <div className="mostPopularBlog">
+                            <img src="https://blog-images-upload.s3.ap-south-1.amazonaws.com/blog_top_50_interview_questions_answers.png" alt="" />
+                            <p>Lyrics from the famous track aptly describes the situation of every fresher when it comes to facing the interview</p>
+                            <p className="readMore">Read Now</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     )

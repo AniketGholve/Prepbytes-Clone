@@ -37,20 +37,40 @@
     width: 10%;
     height: 8vh;
     background: url('https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/navbar/logoPrepBytes.svg') no-repeat center;
+    cursor: pointer;
+}
+
+.loginBtn {
+    margin-right: 1em;
+    border: 2px solid #ff219f;
+    border-radius: 5px;
+    color: #ff219f;
+    background: #fff;
+    padding: 2px 15px;
+}
+
+.signupBtn {
+    color: #fff;
+    padding: 2px 15px;
+    border: 2px solid #ff219f;
+    border-radius: 5px;
+    background-image: linear-gradient(0deg, #f941a9, #ff219f);
 }
 
 .nav-routes {
     height: 7vh;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
+    flex-direction: column;
+    padding: 1em;
 }
 
 .nav-routes>ul {
     padding: 0%;
     list-style-type: none;
     display: grid;
-    grid-template-columns: 0.8fr 1fr 0.8fr 1fr;
+    grid-template-columns: 0.8fr 1fr 0.8fr 0.2fr;
     gap: 3em;
 }
 
@@ -58,20 +78,25 @@
     color: #707070;
     position: relative;
     cursor: pointer;
-    line-height: 3em;
+    line-height: 2em;
+    font-size: 15px;
 }
 
 .nav-routes ul li a {
     color: #707070;
     text-decoration: none;
-
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    font-size: 15px;
 }
 
 .userInfo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     gap: 1em;
+    margin-left: 2em;
 }
 
 .userNameLogo {
@@ -608,28 +633,8 @@
     position: relative;
     flex-wrap: wrap;
 }
-.cardInfoDiv1{
-    position: relative;
-    top: -100px;
-    background-color: white;
-    padding: 30px;
-    text-align: center;
-}
-.cardInfoDiv2{
-    position: relative;
-    top: -100px;
-    background-color: white;
-    padding: 30px;
-    text-align: center;
-}
-.cardInfoDiv3{
-    position: relative;
-    top: -100px;
-    background-color: white;
-    padding: 30px;
-    text-align: center;
-}
-.cardInfoDiv4{
+
+.cardInfoDiv1 {
     position: relative;
     top: -100px;
     background-color: white;
@@ -637,17 +642,319 @@
     text-align: center;
 }
 
-.instituteInfo{
+.cardInfoDiv2 {
+    position: relative;
+    top: -100px;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.cardInfoDiv3 {
+    position: relative;
+    top: -100px;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.cardInfoDiv4 {
+    position: relative;
+    top: -100px;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.instituteInfo {
     background-color: #bcf2fb;
 }
+
 .instituteInfoImg {
     width: 60%;
     margin: auto;
 }
-.instituteInfoImg img{
+
+.instituteInfoImg img {
     width: 100%;
 }
-.placedStudent{
+
+.placedStudent {
     display: flex;
     justify-content: center;
+}
+
+.mentor_heading {
+    margin-top: 2em;
+    text-align: center;
+    color: #3e4041;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.mentor_para {
+    text-align: center;
+    margin: 7px auto;
+    color: #858585;
+    font-size: 16px;
+    width: 50%;
+}
+
+.mentor_card {
+    width: 30%;
+    box-shadow: 0 3px 36px rgba(0, 0, 0, .1607843137254902);
+    margin-top: 4em;
+}
+
+.mentor_bg_img {
+    background: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/mamta_mentor_background.png") no-repeat;
+    object-fit: cover;
+    height: 15vh;
+    width: 100%;
+    background-size: contain;
+}
+
+.mentor_bg_img img {
+    position: relative;
+    display: inline-block;
+    top: 20%;
+    left: 5%;
+}
+
+.mentor_card_gallary {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mentor-div-info {
+    margin-top: 20%;
+    padding: 0 15px;
+}
+
+.mentor-div-info>div {
+    margin-bottom: 10%;
+}
+
+.collegeRepresent_btn-title {
+    font-size: 35px;
+    letter-spacing: 0;
+    color: #004461;
+}
+
+.collegeRepresent-div {
+    width: 45%;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+.collegeRepresent_btn-text {
+    margin: 20px 0;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.collegeRepresent_btn-text span {
+    color: #707070;
+    font-weight: 400;
+}
+
+.collegeRepresent_btn-text span strong {
+    color: #03A6EC;
+}
+
+.collegeRepresent {
+    background: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/campus-business-manager/banner/CBM-WEB.webp") no-repeat;
+    width: 70%;
+    margin: 8em auto 0em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1607843137254902);
+    background-size: cover;
+    border-radius: 20px;
+
+}
+
+.collegeRepresent_btn {
+    background: transparent linear-gradient(104deg, #f1127c, #f86667) 0 0 no-repeat padding-box;
+    letter-spacing: 0;
+    color: #f7f7f7;
+    font-size: 18px;
+    margin: 20px 0;
+    text-transform: unset;
+    padding: 5px 45px;
+    border: none;
+}
+
+.mentor-div-info-para {
+    height: 180px;
+    overflow-y: scroll;
+}
+
+.mentor-div-info-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.home-quiz {
+    background: #fdf0d7;
+    padding: 4em 4em 6em;
+}
+
+.home-quiz-div {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff 0 0 no-repeat padding-box;
+    box-shadow: 0 3px 32px rgba(0, 0, 0, .1607843137254902);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.home-quiz-answer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.quiz-submit-btn {
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
+    font-size: 18px;
+    background: #00a5ec;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.home-quiz-answer-div {
+    width: 40%;
+    margin: 1em;
+    padding: 1em;
+}
+
+.home-quiz-answer-div label {
+    margin-left: 20px;
+}
+
+.home-quiz-heading {
+    color: #424242;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.border-green{
+    border: 1px solid green;
+
+}
+.border-red{
+    border: 1px solid red;
+}
+.mentors_colleges_heading{
+    text-align: center;
+    padding-top: 100px;
+    margin-bottom: 10px;
+    color: #424242;
+    font-size: 35px;
+    font-weight: 100;
+}
+.mentors_colleges_heading span{
+    font-weight: 900;
+}
+.mentors_college_para{
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    color: #858585;
+}
+.mentor_college_Card{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 3px 30px rgba(0,0,0,.1607843137254902);
+    border-radius: 4px;
+    height: 528px;
+}
+.mentor_college_Card img{
+    width: 98%;
+    position: relative;
+    top: -50px;
+    height: 100%;
+}
+.mentor_college_Card h3{
+    margin-bottom: 1em;
+    height: 15%;
+}
+.mentor_college_Card p{
+    margin-bottom: 2em;
+    height: 20%;
+}
+.mentor_college_Card button{
+    padding: 11px 70px;
+    font-size: 18px;
+    background: #00a5ec;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.mentor_college_cards{
+    display: flex;
+    width: 50%;
+    margin: 6em auto;
+    gap: 10%;
+}
+.mentor_college_Card:hover{
+    transform: translateY(-20px);
+    transition-duration: .2s;
+}
+.mostPopularBlogs{
+    background: #fdf0d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mostPopularBlog{
+    background-color: #fff;
+    width: 100%;
+}
+.mostPopularBlogs h1{
+    text-align: center;
+    padding-top: 100px;
+    margin-bottom: 30px;
+    color: #424242;
+    font-weight: 600;
+    font-size: 35px;
+}
+.mostPopularBlog img{
+    width: 100%;
+}
+.mostPopularBlogsGallary{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+.mostPopularBlog p{
+    margin: 2em 2em 1em;
+    font-weight: 600;
+}
+.readMore{
+    color: #03A6EC ;
+    font-weight: 900 !important;
+    font-size: 20px;
+    text-align: center;
 }

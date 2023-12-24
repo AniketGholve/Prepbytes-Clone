@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
 import MockTest from './components/MocktestComp/MockTest'
 import VideoTut from './components/VideoTutorialComp/VideoTut'
 import MasterCompetitiveHome from './components/MasterCompetitiveComp/MasterCompetitiveHome'
 import FullStackHome from './components/FullStackProgram/FullStackHome'
 import ElevationAcademyHome from './components/ElevationAcademyComp/ElevationAcademyHome'
+import Home from './components/Home/Home'
 
 function App() {
 
