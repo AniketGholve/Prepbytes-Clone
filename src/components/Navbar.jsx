@@ -1,16 +1,20 @@
+import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
     let Navi = useNavigate()
+    let [loggedUser, setLoggedUser] = useState(null)
+    useEffect(() => {
+        setLoggedUser(localStorage.getItem("username"))
+    }, [])
     return (
         <div className='nav'>
             <div className='logo' onClick={() => Navi('/')}></div>
-            <div className='nav-routes'>
-                
-                <div>
+            <div className={!loggedUser ? 'nav-routes' :'nav-routes nav-routes-flex'}>
+                {!loggedUser && <div>
                     <button className="loginBtn">Login</button>
                     <button className="signupBtn">Signup</button>
-                </div>
+                </div>}
                 <ul>
                     <li className="studyTab">Study Material <i className="fa-solid fa-caret-down"></i>
                         <ul className="dropdown1" >
@@ -27,14 +31,14 @@ const Navbar = () => {
                     <li><Link to={"/mern-stack-web-development-career"}>Elevated Academy</Link></li>
                     <li><Link>Project</Link> </li>
                 </ul>
-                {/* <div className="userInfo">
+                {loggedUser && <div className="userInfo">
                     <div className="userNameLogo">
                         <h3>A</h3>
                     </div>
                     <div className="userName">
                         <h4>Hi Aniket</h4>
                     </div>
-                </div>   */}
+                </div>}
             </div>
         </div>
     )

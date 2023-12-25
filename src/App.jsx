@@ -7,6 +7,7 @@ import MasterCompetitiveHome from './components/MasterCompetitiveComp/MasterComp
 import FullStackHome from './components/FullStackProgram/FullStackHome'
 import ElevationAcademyHome from './components/ElevationAcademyComp/ElevationAcademyHome'
 import Home from './components/Home/Home'
+import Login_Signup from './components/Login_Signup/Login_Signup'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
           <Route path='/master-competitive-programming' element={<MasterCompetitiveHome />} />
           <Route path='/online-full-stack-developer-mern-certification-program' element={<FullStackHome />} />
           <Route path='/mern-stack-web-development-career' element={<ElevationAcademyHome />} />
+          <Route path='/login' element={<Login_Signup />} />
+          <Route path='/signup' element={<Login_Signup />} />
         </Routes>
       </BrowserRouter>
     </>
