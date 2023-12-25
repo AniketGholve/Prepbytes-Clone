@@ -3,7 +3,7 @@ import './style/style.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { endOfCourseData, infoData, mchInfoData, mentorData, quickInfo, studentReview } from './data/data';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 const MasterCompetitiveHome = () => {
     var settings = {
         dots: false,
@@ -14,13 +14,17 @@ const MasterCompetitiveHome = () => {
         className: 'slides'
     };
     let [toggleData, setToggleView] = useState("language");
+    let ref = useRef()
+    function handleClick() {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
     return (
         <div className="masterCompetitiveHome">
             <div className='mch-home'>
                 <div>
                     <h1 className='mch-heading'>MASTER COMPETITIVE PROGRAMMING</h1>
                     <p>Master Competitive Programming Fom Zero And Become A Top-Rated Coder <b>Under The Guidance Of Top Competitive Programmers</b></p>
-                    <button className="btn btn-enrol">Enrol Now</button>
+                    <button className="btn btn-enrol" onClick={handleClick}>Enrol Now</button>
                 </div>
                 <div>
                     <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp" alt="" />
@@ -128,7 +132,7 @@ const MasterCompetitiveHome = () => {
                     </ul>
                 </div>
             </div>
-            <div className='mch-batch'>
+            <div className='mch-batch' ref={ref}>
                 <h4>SELECT BATCH</h4>
                 <div className='mch-enroll-details'>
                     <div className='mch-enroll-date-selected'>

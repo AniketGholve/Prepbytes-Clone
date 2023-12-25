@@ -101,6 +101,8 @@
     justify-content: end;
     gap: 1em;
     margin-left: 2em;
+    position: relative;
+    cursor: pointer;
 }
 
 .userNameLogo {
@@ -1014,4 +1016,61 @@
     color: #fff;
     font-weight: 900;
     font-size: 0.9em;
+}
+
+#userOption{
+    width: 12%;
+    right: 10%;
+    top: 7vh;
+    background-color: #fff;
+    position: absolute;
+}
+.d-none{
+    display: none;
+}
+.userOptionDiv ul li {
+    list-style-type: none;
+}
+.userOptionDiv ul li a {    
+    color: #fff !important;
+}
+.item-dashboard{
+    color: #707070;
+    text-decoration: none;
+    padding: 15px 7px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cecece;
+    align-items: center;
+}
+.item-left{
+    display: flex;
+    align-items: center;
+}
+.item-left-text{
+    margin-left: 12px;
+    color: #707070;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+.item-logout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 10px;
+}
+.item-logout{
+    color: #ff8787;
+}
+.overlay{
+    height: 100vh;
+    width: 100%;
+    top: 0%;
+    z-index: 999;
+    position: fixed;
+    background-color: transparent;
+    pointer-events: all;
 }

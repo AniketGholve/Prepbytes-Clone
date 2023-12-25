@@ -2,12 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const prepBytes = createSlice({
     name: "cloneDate",
-    initialState: [],
+    initialState: {
+        username:""
+    },
     reducers: {
-        getData: (state, action) => {
-            console.log("Action Called")
+        getUser: (state, action) => {
+            state.username=localStorage.getItem("username")
+        },
+        setUser: (state, action) => {
+            localStorage.setItem("username",action.payload)
+            state.username=localStorage.getItem("username")
         }
     }
 })
-export const { getData } = prepBytes.actions
+export const { getUser ,setUser} = prepBytes.actions
 export default prepBytes.reducer

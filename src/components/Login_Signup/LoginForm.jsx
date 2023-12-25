@@ -1,17 +1,34 @@
 import { TextField } from '@mui/material'
-import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { setUser } from '../Redux/Slice'
 
 const LoginForm = () => {
+    let navi=useNavigate()
+    let data={}
+    let dispatch=useDispatch();
+    const handleChange = (e)=>{
+        data[e.target.name]=e.target.value
+    }
+    const successLogin=(username)=>{
+        dispatch(setUser(username))
+        navi("/");
+    }
+    const checkLogin = (e) => {
+        e.preventDefault()
+        axios.post("http://localhost:3000/login",data).then(res=>res.status===200 && successLogin(res.data.username))
+    }
     return (
-        <form className="form">
+        <form className="form" onSubmit={checkLogin}>
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Email" variant="standard" />
+                    <TextField label="Email" name='email' variant="standard"  onChange={handleChange}/>
                 </div>
             </div>
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Password" variant="standard" type='password' />
+                    <TextField label="Password" name='password' variant="standard" type='password' onChange={handleChange}/>
                 </div>
             </div>
             <div className="accept-terms-and-conditions-container">
