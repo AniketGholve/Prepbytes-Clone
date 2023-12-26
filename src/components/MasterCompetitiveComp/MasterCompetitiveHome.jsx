@@ -4,7 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { endOfCourseData, infoData, mchInfoData, mentorData, quickInfo, studentReview } from './data/data';
 import { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../Redux/Slice';
+import axios from 'axios';
 const MasterCompetitiveHome = () => {
+    let dispatch = useDispatch();
     var settings = {
         dots: false,
         infinite: true,
@@ -13,10 +17,26 @@ const MasterCompetitiveHome = () => {
         slidesToScroll: 1,
         className: 'slides'
     };
+    dispatch(getUser())
+    let loggedUser = useSelector((state) => state.username)
     let [toggleData, setToggleView] = useState("language");
     let ref = useRef()
     function handleClick() {
         ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    function loginCheck() {
+        loggedUser ? makePayment() : alert("Login First")
+    }
+    function makePayment() {
+        let data = {
+            products: {
+                "name": "Master Competitive Programming",
+                "url": "https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp",
+                "price": "25000",
+                "quantity": "1"
+            }
+        }
+        axios.post("http://localhost:3000/create-checkout-session", data).then(res => alert(res.data.id))
     }
     return (
         <div className="masterCompetitiveHome">
@@ -146,7 +166,7 @@ const MasterCompetitiveHome = () => {
                     <div></div>
                     <div className='mch-enroll-div'>
                         <h1 className='mch-enroll-price'>₹ 25000</h1>
-                        <button className='mch-enroll-btn'>Enroll Now</button>
+                        <button className='mch-enroll-btn' onClick={loginCheck}>Enroll Now</button>
                     </div>
                 </div>
             </div>
