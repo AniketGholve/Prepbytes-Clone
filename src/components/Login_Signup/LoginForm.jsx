@@ -11,13 +11,17 @@ const LoginForm = () => {
     const handleChange = (e)=>{
         data[e.target.name]=e.target.value
     }
-    const successLogin=(username)=>{
-        dispatch(setUser(username))
+    const successLogin=(username,email)=>{
+        let data={
+            "username":username,
+            "email":email
+        }
+        dispatch(setUser(data))
         navi("/");
     }
     const checkLogin = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:3000/login",data).then(res=>res.status===200 && successLogin(res.data.username))
+        axios.post("https://prepbytes-clone-yczy.onrender.com/login",data).then(res=>res.status===200 && successLogin(res.data.username,data.email))
     }
     return (
         <form className="form" onSubmit={checkLogin}>

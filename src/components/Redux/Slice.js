@@ -3,15 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const prepBytes = createSlice({
     name: "cloneDate",
     initialState: {
-        username:""
+        username:"",
+        email:""
     },
     reducers: {
         getUser: (state, action) => {
             state.username=localStorage.getItem("username")
         },
         setUser: (state, action) => {
-            localStorage.setItem("username",action.payload)
+            console.log(action)
+            localStorage.setItem("username",action.payload.username)
+            localStorage.setItem("email",action.payload.email)
             state.username=localStorage.getItem("username")
+            state.email=localStorage.getItem("email")
         }
     }
 })

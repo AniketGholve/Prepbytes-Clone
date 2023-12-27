@@ -17,7 +17,7 @@ const SignupForm = () => {
     }
     const checkLogin = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:3000/register",data).then(res=>res.status===200 && successLogin(data.name))
+        axios.post("https://prepbytes-clone-yczy.onrender.com/register",data).then(res=>res.status===200 && successLogin(data.name))
         console.log(data)
     }
     return (

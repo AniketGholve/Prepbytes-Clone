@@ -18,6 +18,7 @@ const Navbar = () => {
         localStorage.clear()
         dispatch(getUser());
         setLoggedUser(username)
+        toggleUserOption()
     }
     useEffect(() => {
         setLoggedUser(localStorage.getItem("username"))

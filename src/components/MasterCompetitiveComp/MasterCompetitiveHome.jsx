@@ -6,6 +6,7 @@ import { endOfCourseData, infoData, mchInfoData, mentorData, quickInfo, studentR
 import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
+import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
 const MasterCompetitiveHome = () => {
     let dispatch = useDispatch();
@@ -20,6 +21,7 @@ const MasterCompetitiveHome = () => {
     dispatch(getUser())
     let loggedUser = useSelector((state) => state.username)
     let [toggleData, setToggleView] = useState("language");
+
     let ref = useRef()
     function handleClick() {
         ref.current?.scrollIntoView({ behavior: 'smooth' })
@@ -27,16 +29,35 @@ const MasterCompetitiveHome = () => {
     function loginCheck() {
         loggedUser ? makePayment() : alert("Login First")
     }
-    function makePayment() {
+    async function makePayment() {
+        const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
+
         let data = {
-            products: {
-                "name": "Master Competitive Programming",
-                "url": "https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp",
-                "price": "25000",
-                "quantity": "1"
-            }
+            "name": "Master Competitive Programming",
+            "url": "https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp",
+            "price": "25000",
+            "quantity": 1
         }
-        axios.post("http://localhost:3000/create-checkout-session", data).then(res => alert(res.data.id))
+        let body = {
+            products: data
+        }
+        console.log(body)
+        const headers = {
+            "Content-Type": "application/json"
+        }
+        const response = await fetch("https://prepbytes-clone-yczy.onrender.com/create-checkout-session", {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(body)
+        })
+        const session = await response.json();
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+        });
+        if (result.error) {
+            console.log(result.error);
+            return
+        }
     }
     return (
         <div className="masterCompetitiveHome">
