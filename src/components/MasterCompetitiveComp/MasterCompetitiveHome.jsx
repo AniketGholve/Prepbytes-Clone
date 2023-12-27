@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
 import { loadStripe } from "@stripe/stripe-js";
 import axios from 'axios';
+import { useEffect } from 'react';
 const MasterCompetitiveHome = () => {
     let dispatch = useDispatch();
     var settings = {
@@ -39,13 +40,14 @@ const MasterCompetitiveHome = () => {
             "quantity": 1
         }
         let body = {
-            products: data
+            products: data,
+            "email":localStorage.getItem("email")
         }
         console.log(body)
         const headers = {
             "Content-Type": "application/json"
         }
-        const response = await fetch("https://prepbytes-clone-yczy.onrender.com/create-checkout-session", {
+        const response = await fetch("http://localhost:3000/create-checkout-session", {
             method: "POST",
             headers: headers,
             body: JSON.stringify(body)

@@ -8,6 +8,7 @@ import FullStackHome from './components/FullStackProgram/FullStackHome'
 import ElevationAcademyHome from './components/ElevationAcademyComp/ElevationAcademyHome'
 import Home from './components/Home/Home'
 import Login_Signup from './components/Login_Signup/Login_Signup'
+import Dashboard from './components/Dashboard/Dashboard'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/mern-stack-web-development-career' element={<ElevationAcademyHome />} />
           <Route path='/login' element={<Login_Signup />} />
           <Route path='/signup' element={<Login_Signup />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>
