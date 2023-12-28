@@ -1,8 +1,14 @@
-const DashboardCard = () => {
+/* eslint-disable react/prop-types */
+const DashboardCard = ({ courseData }) => {
+    console.log(courseData)
     return (
         <div className="course-container">
             <img alt="course-bg-img" className="course-bg-image" src="https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/bg-card+(1).png" />
             <div className="course-rating">
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
             </div>
             <div className="course-logo-info">
                 <div className="course-progress-bar">
@@ -26,8 +32,7 @@ const DashboardCard = () => {
                 </div>
             </div>
 
-            <h3 className="course-heading">Elevation Academy Batch - Full Stack Web...</h3>
-            <button className="course-button button-padding-btm">Go to course</button>
+            <h3 className="course-heading">{courseData.name}</h3>
         </div>
 
     )

@@ -9,6 +9,7 @@ const prepBytes = createSlice({
     reducers: {
         getUser: (state, action) => {
             state.username=localStorage.getItem("username")
+            state.email=localStorage.getItem("email")
         },
         setUser: (state, action) => {
             console.log(action)

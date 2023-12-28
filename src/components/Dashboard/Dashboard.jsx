@@ -1,6 +1,20 @@
+import { useDispatch, useSelector } from 'react-redux'
 import DashboardCard from './DashboardCard'
 import './style/style.css'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { getUser } from '../Redux/Slice';
 const Dashboard = () => {
+    let dispatch = useDispatch();
+    dispatch(getUser())
+    let email=useSelector(state=>state.email)
+    let [getCourseData,setCourseData]=useState([])
+    useEffect(()=>{
+        console.log(email)
+        axios.post("https://prepbytes-clone-yczy.onrender.com/getCourseOfUser",{"email":email}).then(res=>{
+            setCourseData(res.data.course)
+        })
+    },[])
     return (
         <>
             <div className="dashboardView">
@@ -11,11 +25,9 @@ const Dashboard = () => {
                 </div>
                 <div className='dashboardCardView'>
                     <div className='dashboardCardGrid'>
-                        <DashboardCard />
-                        <DashboardCard />
-                        <DashboardCard />
-                        <DashboardCard />
-                        <DashboardCard />
+                        {
+                            getCourseData.map((item,key)=><DashboardCard courseData={item} key={key}/>)
+                        }
                     </div>
                 </div>
             </div>
