@@ -96,7 +96,7 @@ const Home = () => {
                                 <p>Topic wise Live Coding sessions with top rated coders</p>
                             </div>
                         </div>
-                        <div>
+                        <div className="final-goal">
                             <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/achieve_your_coding_dream.svg" alt="" />
                         </div>
                     </div>
@@ -201,7 +201,7 @@ const Home = () => {
                         <button className="HomeHeader__main__left-buttons--button-enroll">Know More</button>
                         <hr />
                         <info>How to crack coding interviews?</info>
-                        <button className="HomeHeader__main__left-buttons--button-enroll">Know More</button>
+                        <button className="HomeHeader__main__left-buttons--button-enroll dynamic-margin">Know More</button>
                     </div>
                 </div>
             </section>
@@ -348,9 +348,9 @@ const Home = () => {
                         </div>
                         <div className="callBackForm">
                             <form>
-                                <input type="text" placeholder="Name"/>
-                                <input type="text" placeholder="Email"/>
-                                <input type="text" placeholder="Phone"/>
+                                <input type="text" placeholder="Name" />
+                                <input type="text" placeholder="Email" />
+                                <input type="text" placeholder="Phone" />
                                 <textarea name="" id="" cols="30" rows="10" placeholder="Query"></textarea>
                                 <button className="callBackDiv-Btn">Request a call back</button>
                             </form>

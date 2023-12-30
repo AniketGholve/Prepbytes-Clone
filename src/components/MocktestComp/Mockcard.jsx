@@ -1,9 +1,45 @@
 /* eslint-disable react/prop-types */
+import { loadStripe } from "@stripe/stripe-js";
 import "./style/mock.css"
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../Redux/Slice";
 
 const Mockcard = ({ practice, name, date, participants, duration, img }) => {
-  const buyTest=()=>{
-    
+  let dispatch = useDispatch();
+  dispatch(getUser())
+  let loggedUser = useSelector((state) => state.username)
+  function loginCheck(name) {
+    loggedUser ? buyTest(name,img) : alert("Login First")
+  }
+  const buyTest = async (name,img) => {
+    const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
+    let data = {
+      "name": name,
+      "url": img,
+      "price": "1000",
+      "quantity": 1
+    }
+    let body = {
+      products: data,
+      "email": localStorage.getItem("email")
+    }
+    console.log(body)
+    const headers = {
+      "Content-Type": "application/json"
+    }
+    const response = await fetch("http://localhost:3000/create-checkout-session", {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body)
+    })
+    const session = await response.json();
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id
+    });
+    if (result.error) {
+      console.log(result.error);
+      return
+    }
   }
   return (
     <div className={practice === "topic" ? "practiceCard" : practice === "company" ? "companyCard" : "mockCard"}>
@@ -32,7 +68,7 @@ const Mockcard = ({ practice, name, date, participants, duration, img }) => {
         </div>
       </div>}
       <div className="btn-div" >
-        <button className="btn btn-test" onClick={()=>buyTest(name)}>Test Now</button>
+        <button className="btn btn-test" onClick={() => loginCheck(name,img)}>Test Now</button>
       </div>
     </div>
   )

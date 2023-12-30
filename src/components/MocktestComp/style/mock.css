@@ -34,16 +34,19 @@
     position: relative;
     top: 0;
     height: 3px;
-    width: 42%;
-    margin-right: 2%;
+    width: 44%;
+    margin-right: 1%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: #5f8dc4;
-    margin-left: auto;
 }
 .pastMock{
     color: #ffa000;
-    display: inline;
+    /* display: inline; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .pastMock::after{
     display: inline-block;
@@ -51,12 +54,11 @@
     position: relative;
     top: 0;
     height: 3px;
-    margin-left: 2% !important;
-    width: 42%;
+    margin-left: 1% ;
+    width: 44%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: #5f8dc4;
-    margin-left: auto;
 }
 
 .mockCard{
@@ -159,7 +161,7 @@
 }
 .practiceCard{
     max-width: 20em;
-    width: 15%;
+    width:12em;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -172,7 +174,7 @@
 .companyCard{
     max-width: 12em;
     min-height: 9em;
-    width: 15%;
+    width: 10em;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -181,4 +183,26 @@
     box-shadow: 0 10px 30px rgba(95,141,196,.2);
     border-radius: 5px;
     margin-top: 1.5em;
+}
+
+@media screen and (max-width :1000px) {
+    .mockInfo p {
+        width: 100%;
+        font-size: 14px;
+    }
+    .mockInfo>div {
+        width: 90%;
+        margin: auto;
+        padding: 2em 0 ;
+    }
+    .practiceTest{
+        display: grid;
+        place-content: center;
+    }
+    .pastMock::before {
+        width: 100px;
+    }
+    .pastMock::after {
+        width: 100px;
+    }
 }

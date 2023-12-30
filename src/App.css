@@ -65,6 +65,7 @@
     flex-direction: column;
     padding: 1em;
 }
+
 .nav-routes-flex {
     flex-direction: row !important;
     align-items: center;
@@ -259,6 +260,7 @@
     margin: 2% auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .codingJourny {
@@ -750,6 +752,7 @@
     font-size: 35px;
     letter-spacing: 0;
     color: #004461;
+    text-align: center;
 }
 
 .collegeRepresent-div {
@@ -857,14 +860,17 @@
     margin-bottom: 25px;
     text-align: center;
 }
-.border-green{
+
+.border-green {
     border: 1px solid green;
 
 }
-.border-red{
+
+.border-red {
     border: 1px solid red;
 }
-.mentors_colleges_heading{
+
+.mentors_colleges_heading {
     text-align: center;
     padding-top: 100px;
     margin-bottom: 10px;
@@ -872,16 +878,19 @@
     font-size: 35px;
     font-weight: 100;
 }
-.mentors_colleges_heading span{
+
+.mentors_colleges_heading span {
     font-weight: 900;
 }
-.mentors_college_para{
+
+.mentors_college_para {
     text-align: center;
     width: 30%;
     margin: auto;
     color: #858585;
 }
-.mentor_college_Card{
+
+.mentor_college_Card {
     width: 40%;
     display: flex;
     align-items: center;
@@ -889,25 +898,29 @@
     flex-direction: column;
     text-align: center;
     padding: 1em;
-    box-shadow: 0 3px 30px rgba(0,0,0,.1607843137254902);
+    box-shadow: 0 3px 30px rgba(0, 0, 0, .1607843137254902);
     border-radius: 4px;
     height: 528px;
 }
-.mentor_college_Card img{
+
+.mentor_college_Card img {
     width: 98%;
     position: relative;
     top: -50px;
     height: 100%;
 }
-.mentor_college_Card h3{
+
+.mentor_college_Card h3 {
     margin-bottom: 1em;
     height: 15%;
 }
-.mentor_college_Card p{
+
+.mentor_college_Card p {
     margin-bottom: 2em;
     height: 20%;
 }
-.mentor_college_Card button{
+
+.mentor_college_Card button {
     padding: 11px 70px;
     font-size: 18px;
     background: #00a5ec;
@@ -916,17 +929,20 @@
     cursor: pointer;
     border-radius: 4px;
 }
-.mentor_college_cards{
-    display: flex;
+
+.mentor_college_cards {
+    display: flex;  
     width: 50%;
     margin: 6em auto;
     gap: 10%;
 }
-.mentor_college_Card:hover{
+
+.mentor_college_Card:hover {
     transform: translateY(-20px);
     transition-duration: .2s;
 }
-.mostPopularBlogs{
+
+.mostPopularBlogs {
     background: #fdf0d7;
     display: flex;
     flex-direction: column;
@@ -934,12 +950,14 @@
     justify-content: center;
     padding: 0% 0 5em;
 }
-.mostPopularBlog{
+
+.mostPopularBlog {
     background-color: #fff;
     width: 100%;
     height: 500px;
 }
-.mostPopularBlogs h1{
+
+.mostPopularBlogs h1 {
     text-align: center;
     padding-top: 100px;
     margin-bottom: 30px;
@@ -947,70 +965,86 @@
     font-weight: 600;
     font-size: 35px;
 }
-.mostPopularBlog img{
+
+.mostPopularBlog img {
     width: 100%;
     height: 50%;
 }
-.mostPopularBlogsGallary{
+
+.mostPopularBlogsGallary {
     width: 60%;
     display: flex;
     align-items: center;
     gap: 2%;
 }
-.mostPopularBlog p{
+
+.mostPopularBlog p {
     margin: 2em 2em 1em;
     font-weight: 600;
     height: 20%;
 }
-.readMore{
-    color: #03A6EC ;
+
+.readMore {
+    color: #03A6EC;
     font-weight: 900 !important;
     font-size: 20px;
     text-align: center;
 }
-.callBackDiv{
+
+.callBackDiv {
     display: flex;
     width: 50%;
-    margin:6em auto; 
+    margin: 6em auto;
     background: #fff;
-    gap: 20px;  
-    box-shadow: 0 3px 35px rgba(0,0,0,.1607843137254902);
+    gap: 20px;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, .1607843137254902);
     padding: 3em;
 }
-.callBackForm form{
+
+.callBackForm form {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: auto;
 }
-.callBackDiv div{
+
+.callBackDiv div {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.callBackDiv div img{
+
+.callBackDiv div img {
     width: 100%;
 }
-.callBackDiv div p{
-    width: 100%;
-    text-align: center;
-}
-.callBackDiv div h1{
+
+.callBackDiv div p {
     width: 100%;
     text-align: center;
 }
-.callBackForm form input,.callBackForm form textarea ,.callBackForm form button{ 
+
+.callBackDiv div h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.callBackForm form input,
+.callBackForm form textarea,
+.callBackForm form button {
     padding: 1em;
     margin: 1em;
 }
-.callBackDiv-img{
+
+.callBackDiv-img {
     margin-top: 1em;
 }
-.callBackDiv-para{
+
+.callBackDiv-para {
     margin-top: 1em;
 }
-.callBackDiv-Btn{
+
+.callBackDiv-Btn {
     background-color: #f78077;
     border: none;
     color: #fff;
@@ -1018,23 +1052,27 @@
     font-size: 0.9em;
 }
 
-#userOption{
+#userOption {
     width: 12%;
     right: 10%;
     top: 7vh;
     background-color: #fff;
     position: absolute;
 }
-.d-none{
+
+.d-none {
     display: none;
 }
+
 .userOptionDiv ul li {
     list-style-type: none;
 }
-.userOptionDiv ul li a {    
+
+.userOptionDiv ul li a {
     color: #fff !important;
 }
-.item-dashboard{
+
+.item-dashboard {
     color: #707070;
     text-decoration: none;
     padding: 15px 7px;
@@ -1043,11 +1081,13 @@
     border-bottom: 1px solid #cecece;
     align-items: center;
 }
-.item-left{
+
+.item-left {
     display: flex;
     align-items: center;
 }
-.item-left-text{
+
+.item-left-text {
     margin-left: 12px;
     color: #707070;
     font-size: 14px;
@@ -1055,17 +1095,20 @@
     letter-spacing: 0;
     text-decoration: none;
 }
-.item-logout{
+
+.item-logout {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     padding: 20px 10px;
 }
-.item-logout{
+
+.item-logout {
     color: #ff8787;
 }
-.overlay{
+
+.overlay {
     height: 100vh;
     width: 100%;
     top: 0%;
@@ -1073,4 +1116,319 @@
     position: fixed;
     background-color: transparent;
     pointer-events: all;
+}
+
+@media screen and (max-width:900px) {
+    .home-achivement {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:100px) and (max-width:600px) {
+    .home-achivement {
+        width: 100%;
+    }
+
+    .homeComp1 {
+        flex-direction: column-reverse;
+    }
+
+    .HomeHeader__main__right {
+        width: 100%;
+    }
+
+    .HomeHeader__main__left--heading {
+        font-size: 20px;
+    }
+
+    .HomeHeader__main__left {
+        padding: 1em;
+        width: 90%;
+        margin-top: 0;
+    }
+
+    .HomeHeader__main__left--subheading {
+        margin: .5em 0;
+        font-size: 23px;
+    }
+
+    .HomeHeader__main__left-list-item--text {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .HomeHeader__main__left-buttons--button-enroll {
+        font-size: 12px;
+    }
+
+    .home-achivement img {
+        width: 33%;
+        height: 33%;
+    }
+
+    .founderHome {
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: 10em;
+        margin-top: 5em;
+    }
+
+    .founderCard {
+        width: 100%;
+    }
+
+    .freeSeminar {
+        width: 100%;
+    }
+
+    .freeSeminar p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .freeSeminar info {
+        text-align: center;
+        font-size: 18px;
+        display: grid;
+        place-content: center;
+        width: 70%;
+        margin: auto;
+    }
+
+    .freeSeminar button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .cardInfo {
+        height: 25vh;
+    }
+
+    .cardInfo div {
+        width: 43%;
+        padding: .2em;
+        top: -170px;
+        margin: 1em auto;
+        margin-bottom: 2em;
+        border-radius: 10px;
+    }
+
+    .cardInfo img {
+        width: 50%;
+    }
+
+    .instituteInfoImg {
+        background-image: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/homepage/Selected_pool_of(mobile)+(1).webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .instituteInfoImg img {
+        display: none;
+    }
+
+    .placedStudent img {
+        width: 100%;
+        height: 46vh;
+        object-fit: cover;
+    }
+
+    .mentor_card_gallary {
+        width: 70%;
+        flex-direction: column;
+        margin-bottom: 3em;
+    }
+
+    .mentor_card {
+        width: 100%;
+    }
+
+    .mentor_para {
+        width: 75%;
+        font-size: 14px;
+    }
+
+    .mentor_heading {
+        font-size: 24px;
+    }
+
+    .home-quiz-answer-div {
+        width: 100%;
+        margin: 0.5em;
+        padding: 0.2em;
+    }
+
+    .home-quiz-div {
+        padding: 1em;
+    }
+
+    .collegeRepresent-div {
+        width: 100%;
+        height: 100%;
+        padding: 2em 0em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .collegeRepresent_btn-title {
+        font-size: 22px;
+    }
+
+    .collegeRepresent {
+        background-image: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/campus-business-manager/banner/CBM-Homepage-mobile.webp");
+        height: 50vh;
+        width: 90%;
+        background-position: bottom;
+    }
+
+    .collegeRepresent_btn-text {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .mentors_colleges_heading {
+        font-size: 25px;
+        width: 60%;
+        margin: auto;
+    }
+
+    .mentors_college_para {
+        width: 90%;
+        margin: 2em auto;
+    }
+
+    .mentor_college_cards {
+        width: 100%;
+        margin-top: 2em;
+        flex-wrap: wrap;
+    }
+
+    .mentor_college_Card {
+        width: 60%;
+        margin: 2em auto;
+    }
+
+    .mostPopularBlogsGallary {
+        width: 70%;
+    }
+
+    .mostPopularBlog {
+        margin: 1em 0;
+    }
+
+    .callBackDiv {
+        width: 70%;
+        padding: 2em;
+        flex-direction: column;
+    }
+
+    .callBackDiv div {
+        width: 100%;
+    }
+
+    .callBackForm form {
+        width: 100%;
+        margin: auto;
+    }
+
+    .callBackForm form input {
+        margin: 1em 0;
+    }
+
+    .callBackForm form textarea {
+        margin: 1em 0;
+    }
+
+    .codingJourny {
+        flex-direction: column;
+    }
+
+    .codingJournyLeft {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        z-index: -3;
+    }
+
+    .codingJournyRight {
+        width: 83%;
+        padding: 0%;
+        margin: auto;
+    }
+
+    .codingJournyLeft img {
+        width: 100%;
+        height: 150vh;
+        opacity: 0.5;
+        object-fit: contain;
+    }
+
+    .infoDiv {
+        max-height: 100%;
+    }
+    .final-goal img{
+        width: 100%;
+    }
+    .codingJournyRight>div {
+        margin: auto;
+    }
+    .infoDiv {
+        width: 50%;
+    }
+    .courses {
+        flex-direction: column;
+    }
+    .expHomeDiv {
+        margin-top: 50em;
+        flex-direction: column-reverse;
+        width: 75%;
+    }
+    .expBoxHomeImg-div1 {
+        width: 50%;
+        object-fit: contain;
+    }
+    .expBoxHomeImg-div1 img{
+        width: 100%;
+    }
+    .expBoxHomeImg-div2 img{
+        width: 100%;
+    }
+    .expBoxHomeImg-div2 {
+        width: 50%;
+        object-fit: contain;
+    }
+    .mostPopularBlogsGallary {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .expBoxHome {
+        width: 100%;
+    }
+    .expBoxHome>p{
+        font-size: 24px;
+    }
+    .profExpBox{
+        width: 100%;
+    }
+    .codingJournyheading {
+        font-size: 20px;
+    }
+    .courseHeading {
+        margin-bottom: 2em;
+    }
+    .quiz-submit-btn {
+        margin: 0%;
+        padding: 14px;
+    }
+    .home-quiz-div form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
