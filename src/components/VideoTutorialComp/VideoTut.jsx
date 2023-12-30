@@ -6,7 +6,7 @@ const VideoTut = () => {
             <div className="videoHeader">
                 <div>
                     <p>Prepbytes Video Library</p>
-                    <p>Increase your knowledge with PrepBytes free videos.
+                    <p className="videoInfo">Increase your knowledge with PrepBytes free videos.
                         PrepBytes video library is a repository of more than 250 videos containing videos on Competitive Programming ,
                         Language Fundamentals - C, C++,
                         Java, Data Structures and Algorithms, Aptitude, Operating System,
