@@ -45,19 +45,23 @@
     border-radius: 4px;
     box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.161);
 }
-.mch-info-div-pink{
+
+.mch-info-div-pink {
     border-bottom: 4px solid #df3897;
     border-right: 4px solid #df3897;
 }
-.mch-info-div-yellow{
+
+.mch-info-div-yellow {
     border-bottom: 4px solid #eb9a00;
     border-right: 4px solid #eb9a00;
 }
-.mch-info-div-blue{
+
+.mch-info-div-blue {
     border-bottom: 4px solid #0398d3;
     border-right: 4px solid #0398d3;
 }
-.mch-info-div-purple{
+
+.mch-info-div-purple {
     border-bottom: 4px solid #7914a3;
     border-right: 4px solid #7914a3;
 }
@@ -85,7 +89,7 @@
 }
 
 .mch-mentor-gallary {
-    width: 55%;
+    max-width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -312,12 +316,14 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.courseSyllabus-div-img{
+
+.courseSyllabus-div-img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.courseSyllabus-div-img img{
+
+.courseSyllabus-div-img img {
     width: 60%;
     height: 60%;
 }
@@ -325,13 +331,16 @@
 .courseDataList ul::-webkit-scrollbar-thumb {
     background-color: #00a6eb !important;
 }
+
 .courseDataList ul::-webkit-scrollbar {
     width: 5px;
 }
+
 .courseDataList ul::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-.mch-batch{
+
+.mch-batch {
     border-top: 0.5px solid #c2c2c2;
     border-bottom: 0.5px solid #c2c2c2;
     display: grid;
@@ -340,71 +349,94 @@
     padding: 4rem;
     margin: auto;
 }
-.mch-batch h4{
+
+.mch-batch h4 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.mch-enroll-btn{
+
+.mch-enroll-btn {
     border: none;
     min-width: 130px;
     padding: 7px;
     color: #fffaf0;
     font-size: 16px;
     cursor: pointer;
-    background: transparent linear-gradient(79deg,#3194ee,#1477d2) 0 0 no-repeat padding-box;
-    box-shadow: 0 3px 6px rgba(0,0,0,.160);
+    background: transparent linear-gradient(79deg, #3194ee, #1477d2) 0 0 no-repeat padding-box;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .160);
     border-radius: 3px;
 }
-.mch-enroll-details{
+
+.mch-enroll-details {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 60%;
 }
-.mch-enroll-date-selected{
+
+.mch-enroll-date-selected {
     background-color: #00a6eb;
-    padding:1rem 1.3rem;
+    padding: 1rem 1.3rem;
     border-radius: 5px;
 }
-.mch-enroll-date-selected h3{
+
+.mch-enroll-date-selected h3 {
     color: white;
 }
-.mch-enroll-date-selected p{
+
+.mch-enroll-date-selected p {
     font-size: .9rem;
     color: #fff;
 }
-.mch-enroll-date-not-selected{
+.mch-enroll-date-not-selected p {
+    font-size: .9rem;
+    color: #1b7ed8;
+}
+
+.mch-enroll-date-not-selected {
     color: #1b7ed8;
     padding: 1rem 1.3rem;
     background: #fff 0 0 no-repeat padding-box;
-    box-shadow: 0 0 5px rgba(37,37,37,.1607843137254902);
+    box-shadow: 0 0 5px rgba(37, 37, 37, .1607843137254902);
     border-radius: 5px;
     border-bottom: 5px solid #00a6eb;
 }
 
-.mch-dream-card{
+.mch-dream-card {
     display: flex;
-    width: 16em;
+    width: 100%;
     flex-direction: column;
 }
-.mch-dream-name{
+
+.mch-dream-name {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
 }
-.mch-dream-name img{
+
+.mch-dream-name img {
     width: 20%;
 }
-.mch-dream-info{
+
+.mch-dream-info {
     text-align: justify;
     font-size: 0.75rem;
     letter-spacing: 0px;
     line-height: 1.8em;
-    padding:0 50px;
+    width: 300px;
+    height: 200px;
+    overflow: scroll;
+    margin: auto;
+    width: 85%;
 }
-.mch-dream-person{
+
+.mch-dream-info p::-webkit-scrollbar-thumb {
+    background-color: #00a6eb !important;
+}
+
+.mch-dream-person {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -413,65 +445,303 @@
     margin-top: 2em;
     position: relative;
 }
-.mch-dream-person>img{
+
+.mch-dream-person>img {
     width: 50px;
 }
-.slides{
-    .slick-prev:before, .slick-next:before{
+
+.mch-dream-person-img>img {
+    width: 100%;
+}
+
+.slides {
+
+    .slick-prev:before,
+    .slick-next:before {
         color: #00a6eb;
         border: #00a6eb;
-        font-size:40px;
+        font-size: 40px;
+    }
+
+    .slick-next {
+        top: 40%;
+    }
+
+    .slick-prev {
+        top: 40%
     }
 }
-.courseEnd{
+
+.courseEnd {
     max-width: 1147px;
-    margin:3rem auto;
+    margin: 3rem auto;
     border-top: 0.5px solid #c2c2c2;
     border-bottom: 0.5px solid #c2c2c2;
 }
-.courseEndDivImg{
+
+.courseEndDivImg {
     width: 20%;
 }
-.courseEndDivInfo{
+
+.courseEndDivInfo {
     display: flex;
     align-items: center;
     height: 80%;
     width: 80%;
     margin: auto;
-    border-radius:5px ;
+    border-radius: 5px;
 }
-.courseEndDivInfo-pink{
+
+.courseEndDivInfo-pink {
     border-bottom: 4px solid #df3897;
     border-right: 4px solid #df3897;
 }
-.courseEndDivInfo-blue{
+
+.courseEndDivInfo-blue {
     border-bottom: 4px solid #0398d3;
     border-right: 4px solid #0398d3;
 }
-.courseEndDivInfo-purple{
+
+.courseEndDivInfo-purple {
     border-bottom: 4px solid #7914a3;
     border-right: 4px solid #7914a3;
 }
-.courseEndDivInfo-yellow{
+
+.courseEndDivInfo-yellow {
     border-bottom: 4px solid #eb9a00;
     border-right: 4px solid #eb9a00;
 }
-.courseEndDiv{
+
+.courseEndDiv {
     display: flex;
     align-items: center;
     width: 100%;
     margin: auto;
 }
-.courseEndDivImg img{
+
+.courseEndDivImg img {
     width: 100%;
     height: 100%;
 }
-.courseEndDivInfo img{
+
+.courseEndDivInfo img {
     height: 80%;
 }
-.courseEndInfo{
+
+.courseEndInfo {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     width: 80%;
+}
+
+@media screen and (min-width:1025px) and (max-width:1400px) {
+    .mch-dream-info {
+        width: 85%;
+        padding: 0%;
+    }
+
+    .mch-dream-person-img img {
+        width: 100%;
+    }
+
+    .mch-mentor-gallary {
+        width: 100%;
+        max-width: none;
+    }
+
+    .mch-enroll-details {
+        width: 100%;
+    }
+
+    .slick-slider {
+        width: 80% !important;
+    }
+
+    .mch-curriculum {
+        width: 80%;
+    }
+
+    .mch-coding-context-img {
+        width: 80%;
+    }
+
+    .mch-mentor-card {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:1024px) {
+    .mch-home {
+        width: 90%;
+        margin-top: 10vh;
+    }
+
+    .mch-home-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mch-home img {
+        width: 100%;
+        height: 60%;
+    }
+
+    .mch-info {
+        width: 90%;
+    }
+
+    .mch-mentor-gallary {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        max-width: 95%;
+    }
+
+    .courseFeatureDetailsUl {
+        width: 95%;
+    }
+
+    .courseFeatureBgImg {
+        transform: translate(0%);
+    }
+
+    .courseFeatureDetailsUl li {
+        width: 95%;
+    }
+
+    .mch-instituteInfo {
+        width: 90%;
+    }
+
+    .mch-coding-context-img {
+        width: 100%;
+    }
+
+    .mch-curriculum {
+        width: 90%;
+    }
+
+    .mch-batch {
+        padding: 2rem;
+    }
+
+    .mch-enroll-details {
+        width: 100%;
+        gap: 1em;
+    }
+
+    .slick-slider {
+        width: 90% !important;
+    }
+
+    .mch-mentor-card {
+        margin: auto;
+    }
+    .slick-next {
+        right: -14px;
+    }
+}
+
+@media screen and (max-width:599px) {
+    .mch-heading{
+        text-align: center;
+    }
+    .mch-home {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .mch-home div p {
+        width: 80%;
+        text-align: center;
+    }
+    .mch-home div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mch-home-img img {
+        width: 100%;
+    }
+
+    .mch-info {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+
+    .mch-mentor-gallary {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .mch-mentor-card {
+        width: 90%;
+    }
+
+    .courseFeatureDetailsUl {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .courseFeatureDetailsUl li {
+        width: 100%;
+    }
+
+    .courseDetailsEvenDiv {
+        direction: ltr;
+    }
+
+    .mch-instituteInfo {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0;
+    }
+    .mch-instituteInfo div{
+       margin-top: 1em;
+    }
+    .mch-curriculum {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+    .mch-batch {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .mch-enroll-details {
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        align-items: normal;
+    }
+    .mch-enroll-div{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .mch-enroll-details div{
+        margin-top: 1em;
+    }
+    .mch-coding-context{
+        font-size: 20px;
+        width: 80%;
+    }
+    .courseEndDiv{
+        flex-direction: column;
+    }
+    .courseEndInfo {
+        grid-template-columns: 1fr;
+    }
+    .courseFeatureBgImg {
+        display: none;
+    }
+    .mch-coding-context-img {
+        width: 100%;
+    }
+    .slick-next {
+        right: -16px;
+    }
 }

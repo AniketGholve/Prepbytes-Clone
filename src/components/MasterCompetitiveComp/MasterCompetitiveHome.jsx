@@ -7,13 +7,31 @@ import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
 import { loadStripe } from "@stripe/stripe-js";
+import { useEffect } from 'react';
 const MasterCompetitiveHome = () => {
+    console.log(window.innerWidth)
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+          width,
+          height
+        };
+      }
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+          }
+      
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize);
+    }, [])
     let dispatch = useDispatch();
     var settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" &&  windowDimensions.width < "900" ? 2:3,
         slidesToScroll: 1,
         className: 'slides'
     };
@@ -39,7 +57,7 @@ const MasterCompetitiveHome = () => {
         }
         let body = {
             products: data,
-            "email":localStorage.getItem("email")
+            "email": localStorage.getItem("email")
         }
         console.log(body)
         const headers = {
@@ -67,7 +85,7 @@ const MasterCompetitiveHome = () => {
                     <p>Master Competitive Programming Fom Zero And Become A Top-Rated Coder <b>Under The Guidance Of Top Competitive Programmers</b></p>
                     <button className="btn btn-enrol" onClick={handleClick}>Enrol Now</button>
                 </div>
-                <div>
+                <div className='mch-home-img'>
                     <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp" alt="" />
                 </div>
             </div>
@@ -206,7 +224,7 @@ const MasterCompetitiveHome = () => {
                                 </div>
                                 <div className='mch-dream-person'>
                                     <img src={item.img_src} alt="" />
-                                    <div className=''>
+                                    <div className='mch-dream-person-img'>
                                         <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/zenithWebp/Quote2.webp" alt="" />
                                     </div>
                                 </div>
