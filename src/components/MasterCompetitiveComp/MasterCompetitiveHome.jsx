@@ -46,13 +46,14 @@ const MasterCompetitiveHome = () => {
     function loginCheck() {
         loggedUser ? makePayment() : alert("Login First")
     }
+    let [courseDate,setCourseDate]=useState("1 May")
     async function makePayment() {
         const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
-
         let data = {
             "name": "Master Competitive Programming",
             "url": "https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp",
             "price": "25000",
+            "courseDate": courseDate,
             "quantity": 1
         }
         let body = {
@@ -194,12 +195,12 @@ const MasterCompetitiveHome = () => {
             <div className='mch-batch' ref={ref}>
                 <h4>SELECT BATCH</h4>
                 <div className='mch-enroll-details'>
-                    <div className='mch-enroll-date-selected'>
+                    <div className={courseDate ==="1 May" ? 'mch-enroll-date-selected' :"mch-enroll-date-not-selected"} onClick={()=>setCourseDate("1 May")}>
                         <h3>1st MAY</h3>
                         <p>Enrolment Started</p>
                     </div>
-                    <div className='mch-enroll-date-not-selected'>
-                        <h5>15th MAY</h5>
+                    <div className={courseDate ==="1 May" ? 'mch-enroll-date-not-selected' :"mch-enroll-date-selected"} onClick={()=>setCourseDate("15 May")}>
+                        <h3>15th MAY</h3>
                         <p>Enrolment Started</p>
                     </div>
                     <div></div>

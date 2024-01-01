@@ -19,14 +19,14 @@ const DashboardCard = ({ courseData }) => {
                         <img className="course-date-icon" alt="clockIcon" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678116-calendar-512.png" />
                         <div>
                             <div className="course-date-label">START DATE:</div>
-                            <div className="course-date">1 May 2023</div>
+                            <div className="course-date">{courseData.courseDate ?? ""}</div>
                         </div>
                     </div>
                     <div className="course-dates">
                         <img className="course-date-icon" alt="clockIcon" src="/public/last-visited.svg" />
                         <div>
                             <div className="course-date-label">LAST VISIT:</div>
-                            <div className="course-date">18 Dec 2023</div>
+                            <div className="course-date">18 DEC 2023</div>
                         </div>
                     </div>
                 </div>

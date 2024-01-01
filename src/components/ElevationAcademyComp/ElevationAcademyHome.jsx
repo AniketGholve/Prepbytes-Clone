@@ -12,17 +12,17 @@ const ElevationAcademyHome = () => {
     function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
         return {
-          width,
-          height
+            width,
+            height
         };
-      }
+    }
     useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
-          }
-      
-          window.addEventListener('resize', handleResize);
-          return () => window.removeEventListener('resize', handleResize);
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, [])
     var settings = {
         dots: true,

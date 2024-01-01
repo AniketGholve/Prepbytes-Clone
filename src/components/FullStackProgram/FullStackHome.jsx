@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
 import './style/style.css'
 import Slider from 'react-slick'
+import { journyData } from './data/data';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../Redux/Slice';
+import { loadStripe } from '@stripe/stripe-js';
 const FullStackHome = () => {
     var settings = {
         dots: true,
@@ -10,6 +15,46 @@ const FullStackHome = () => {
         slidesToScroll: 1,
         className: 'slides-info'
     };
+    let dispatch = useDispatch();
+    let [journyItem, setJournyData] = useState(journyData[0])
+    dispatch(getUser())
+    let [courseDate,setCourseDate]=useState("1 May")
+    let loggedUser = useSelector((state) => state.username)
+    function loginCheck() {
+        loggedUser ? makePayment() : alert("Login First")
+    }
+    async function makePayment() {
+        const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
+
+        let data = {
+            "name": "Full Stack Program",
+            "url": "https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/coursePageNew/MCPWebp/mcp-header-image.webp",
+            "price": "30000",
+            "courseDate": courseDate,
+            "quantity": 1
+        }
+        let body = {
+            products: data,
+            "email": localStorage.getItem("email")
+        }
+        console.log(body)
+        const headers = {
+            "Content-Type": "application/json"
+        }
+        const response = await fetch("https://prepbytes-clone-yczy.onrender.com/create-checkout-session", {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(body)
+        })
+        const session = await response.json();
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+        });
+        if (result.error) {
+            console.log(result.error);
+            return
+        }
+    }
     return (
         <div>
             <div className='fch-home-main'>
@@ -45,20 +90,20 @@ const FullStackHome = () => {
             <div className='fch-batch'>
                 <h3>Select Batch</h3>
                 <div>
-                    <input type="radio" checked />
+                    <input type="radio" checked name='courseDate' onClick={()=>setCourseDate("1 May")} />
                     <div>
                         <h4>1st May</h4>
                         <p>Enrolment Started</p>
                     </div>
                 </div>
                 <div>
-                    <input type="radio" />
+                    <input type="radio" name='courseDate'onClick={()=>setCourseDate("15 May")}/>
                     <h4>15th May</h4>
                     <p>Enrolment Started</p>
                 </div>
                 <div>
                     <h2 className='price-enroll-now'>₹30000</h2>
-                    <button className='btn-enroll-now'>Enroll Now</button>
+                    <button className='btn-enroll-now' onClick={loginCheck}>Enroll Now</button>
                 </div>
             </div>
             <div className='fch-lang-tool'>
@@ -77,29 +122,29 @@ const FullStackHome = () => {
                 </div>
                 <div className='fch-journy-details'>
                     <div className='fch-journy-details-div1'>
-                        <div className='fch-journy-details-list'>
-                            <h1 className='fch-journy-details-list-num'>1</h1>
-                            <h4>Batch Commencement</h4>
-                        </div>
-                        <div className='fch-journy-details-list'>
-                            <h1 className='fch-journy-details-list-num'>2</h1>
-                            <h4>Batch Commencement</h4>
-                        </div>
-                        <div className='fch-journy-details-list'>
-                            <h1 className='fch-journy-details-list-num'>3</h1>
-                            <h4>Batch Commencement</h4>
-                        </div>
-                        <div className='fch-journy-details-list'>
-                            <h1 className='fch-journy-details-list-num'>4</h1>
-                            <h4>Batch Commencement</h4>
-                        </div>
-                        <div className='fch-journy-details-list'>
-                            <h1 className='fch-journy-details-list-num'>5</h1>
-                            <h4>Batch Commencement</h4>
-                        </div>
+                        {
+                            journyData.map((item, key) => {
+                                return <div className='fch-journy-details-list' key={key} onClick={() => {setJournyData(item);}}>
+                                    <h1 className='fch-journy-details-list-num'>{key + 1}</h1>
+                                    <h4>{item.heading}</h4>
+                                </div>
+                            })
+                        }
                     </div>
                     <div className='fch-journy-details-div2'>
-
+                        <h1 className='fch-journy-details-div2-heading'>{journyItem.heading ?? ""}</h1>
+                        <div >
+                            <ul className='fch-journy-details-div2-list'>
+                                {
+                                    journyItem.info.map((item, key) => {
+                                        return <li key={key}>{item}</li>
+                                    })
+                                }
+                            </ul>
+                        </div>
+                        <div className='fch-journy-details-div2-img'>
+                            <img src={journyItem.img} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,7 +230,7 @@ const FullStackHome = () => {
             <div className='fch-last-img'>
                 <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/digital-marketing/Feature.webp" alt="" />
             </div>
-        </div>
+        </div >
     )
 }
 
