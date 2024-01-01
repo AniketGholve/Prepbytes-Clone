@@ -190,26 +190,33 @@
     z-index: -2;
     width: 42%;
 }
+
 .dream-process-span1-yellow {
     background-color: rgb(255, 251, 248);
     border: 1px dashed rgb(255, 158, 82);
 }
+
 .dream-process-span1-purple {
-    background-color: rgb(255, 241, 253);;
+    background-color: rgb(255, 241, 253);
+    ;
     border: 1px dashed rgb(192, 39, 175);
 }
+
 .dream-process-span1-red {
     background-color: rgb(255, 242, 242);
     border: 1px dashed red;
 }
+
 .dream-process-span1-blue {
     background-color: rgb(226, 246, 255);
     border: 1px dashed rgb(32, 142, 189);
 }
+
 .dream-process-span1-green {
     background-color: rgb(231, 255, 240);
     border: 1px dashed rgb(31, 194, 92);
 }
+
 .dream-process-span1 {
     width: 45px;
     height: 40px;
@@ -230,29 +237,36 @@
     padding-right: 25px;
     text-align: center;
 }
+
 .dream-process-span2-yellow {
     color: rgb(255, 158, 82);
     font-weight: 900;
 }
+
 .dream-process-span2-red {
     color: rgb(238, 45, 45);
     font-weight: 900;
 }
+
 .dream-process-div1-red {
-    animation-name:fadeColor ;
+    animation-name: fadeColor;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    border: 0.5px solid rgb(238, 45, 45);;
+    border: 0.5px solid rgb(238, 45, 45);
+    ;
 }
+
 .dream-process-span2-purple {
     color: rgb(192, 39, 175);
     font-weight: bold;
 }
+
 .dream-process-span2-blue {
     color: rgb(32, 142, 189);
     font-weight: bold;
 }
+
 .dream-process-span2-green {
     color: rgb(31, 194, 92);
     font-weight: bold;
@@ -291,7 +305,7 @@
 
 .wp-academy-blog {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
     width: 60%;
     margin: auto;
 }
@@ -331,29 +345,35 @@
     text-align: center;
     color: #fff;
 }
-.ps-comp-div-heading{
+
+.ps-comp-div-heading {
     display: flex;
     align-items: center;
     font-weight: 900;
     font-size: 18px;
 }
-.ps-comp-div-pink{
+
+.ps-comp-div-pink {
     background: rgb(247, 128, 119);
 }
-.ps-comp-div-color-pink{
+
+.ps-comp-div-color-pink {
     color: rgb(247, 128, 119) !important;
 }
-.ps-comp-div-color-blue{
+
+.ps-comp-div-color-blue {
     color: rgb(101, 187, 229) !important;
 }
-.ps-comp-div-blue{
+
+.ps-comp-div-blue {
     background: rgb(101, 187, 229);
 }
 
-.ps-comp-div-yellow{
+.ps-comp-div-yellow {
     background: rgb(247, 182, 67);
 }
-.ps-comp-div-color-yellow{
+
+.ps-comp-div-color-yellow {
     color: rgb(247, 182, 67) !important;
 }
 
@@ -380,23 +400,29 @@
     cursor: pointer;
     width: 50%;
 }
-.ps-comp-div-border-yellow{
-    border-left: 8px solid rgb(247, 182, 67)  !important;
+
+.ps-comp-div-border-yellow {
+    border-left: 8px solid rgb(247, 182, 67) !important;
 }
-.ps-comp-div-border-pink{
+
+.ps-comp-div-border-pink {
     border-left: 8px solid rgb(255, 134, 91) !important;
 }
-.ps-comp-div-border-blue{
-    border-left: 8px solid rgb(101, 187, 229)  !important;
+
+.ps-comp-div-border-blue {
+    border-left: 8px solid rgb(101, 187, 229) !important;
 }
-.ps-comp-span-border-yellow{
-    border: 1px solid rgb(247, 182, 67)  !important;
+
+.ps-comp-span-border-yellow {
+    border: 1px solid rgb(247, 182, 67) !important;
 }
-.ps-comp-span-border-pink{
+
+.ps-comp-span-border-pink {
     border: 1px solid rgb(255, 134, 91) !important;
 }
-.ps-comp-span-border-blue{
-    border: 1px solid rgb(101, 187, 229)  !important;
+
+.ps-comp-span-border-blue {
+    border: 1px solid rgb(101, 187, 229) !important;
 }
 
 .ps-comp-tech-info {
@@ -429,7 +455,7 @@
 .placedStudentHeading {
     text-align: center;
     margin: 2em auto 0.1em;
-    font-size:40px;
+    font-size: 40px;
     color: #3e4041;
 }
 
@@ -457,7 +483,8 @@
     margin: 15px;
     align-items: center;
 }
-.upcomingBatch{
+
+.upcomingBatch {
     background: #fdf0d7;
     display: flex;
     align-items: center;
@@ -465,7 +492,8 @@
     padding: 0 17.5em;
     margin: 2em 0;
 }
-.upcomingBatchHeading{
+
+.upcomingBatchHeading {
     font-size: 22px;
     color: #424242;
     margin-bottom: 10px;
@@ -473,7 +501,8 @@
     font-weight: 600;
     line-height: 1.4;
 }
-.upcomingBatchBtn{
+
+.upcomingBatchBtn {
     border-radius: 4px;
     border: none;
     padding: 10px 16px;
@@ -483,21 +512,198 @@
     font-weight: 600;
     cursor: pointer;
 }
-.d-none{
+
+.d-none {
     display: none;
 }
 
-.ps-comp-div-toggle{
+.ps-comp-div-toggle {
     width: 50%;
     border-radius: 50%;
     background: #e8f7ed;
 }
 
 @keyframes fadeColor {
-    from{
+    from {
         box-shadow: 2px 2px 20px rgb(235, 44, 44);
     }
-    to{
+
+    to {
         box-shadow: 2px 2px 10px rgb(168, 117, 117);
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1300px) {
+    .elevationAcademyHome {
+        width: 90% !important;
+    }
+
+    .new_batch {
+        width: 90% !important;
+    }
+
+    .dream-process {
+        width: 80% !important;
+    }
+
+    .wp-academy-blog {
+        width: 90% !important;
+    }
+
+    .slides-info {
+        width: 90% !important;
+    }
+
+    .wp-academy-card {
+        margin: 1em auto;
+    }
+
+    .upcomingBatch {
+        padding: 0 3.5em;
+    }
+
+    .placedCompany {
+        width: 80%;
+    }
+
+    .placedStudentPara {
+        width: 50%;
+    }
+
+    .placedCompanyDiv img {
+        height: 100%;
+        object-fit: none;
+    }
+}
+@media screen and (max-width:1023px) {
+    .elevationAcademyHome {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .new_batch {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .new_batch_events {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .wp-academy-blog {
+        width: 90%;
+    }
+
+    .eventInfoDate {
+        width: 100%;
+    }
+
+    .eventInfo {
+        flex-direction: row;
+        width: 80%;
+        margin-top: 1em;
+    }
+
+    .eventInfoDate {
+        width: 200px;
+    }
+
+    .upcomingBatch {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .upcomingBatch img{
+        width: 100%;
+    }
+    .wp-academy-card {
+        width: 65%;
+        margin:1em auto;
+    }
+    .wp-academy-blog{
+        justify-content: center;
+    }
+    .dream-process {
+        flex-direction: column;
+        width: 90%;
+    }
+    .dream-process-div1 {
+        width: 100%;
+        position: static;
+        margin: 0;
+    }
+    .dream-process-info-div {
+        width: 100%;
+        margin-top: 1em;
+        flex-direction: column;
+        height: max-content;
+        padding: 1em 0.2em;
+    }
+    .dream-process-info-div img{
+        width: auto;
+    }
+    .dream-process-div1::after {
+        display: none;
+    }
+    .eventInfoOdd::after {
+        display: none;
+    }
+    .eventInfoOdd::before {
+        display: none;
+    }
+    
+    .dream-process-span1 {
+        left: 45%;
+        top: -35px;
+    }
+    .dream-process-span2 {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .ps-comp {
+        width: 95%;
+    }
+    .ps-comp-div-date {
+        margin: 3% auto;
+        width: 90%;
+    }
+    .upcomingBatchHeading {
+        text-align: center;
+        margin:1em auto;
+        width: 80%;
+    }
+    .upcomingBatchBtn {
+        display: block;
+        width: 50%;
+        margin: 0 auto 1em;
+    }
+    .placedStudentPara {
+        width: 50%;
+    }
+    .slides-info {
+        width: 80% !important;
+    }
+    .student-review-div {
+        box-shadow: none;
+    }
+    .slick-prev {
+        left: 80% !important;
+    }
+    .placedCompany {
+        width: 90%;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .placedStudent img {
+        height: 100%;
+        object-fit: contain;
+    }
+    .placedStudentHeading {
+        font-size: 25px;
     }
 }

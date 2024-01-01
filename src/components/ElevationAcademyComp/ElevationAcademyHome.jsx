@@ -5,12 +5,30 @@ import NewEvent from './NewEvent'
 import { academyCardData, dreamJobData, newEventData, placedCompanyImg, studnetReview, syllabusData } from './data/data'
 import './style/style.css'
 import Syllabus from './Syllabus'
+import { useState } from 'react'
+import { useEffect } from 'react'
 const ElevationAcademyHome = () => {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+          width,
+          height
+        };
+      }
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+          }
+      
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize);
+    }, [])
     var settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" &&  windowDimensions.width < "900" ? 2:3,
         slidesToScroll: 1,
         className: 'slides-info'
     };
@@ -89,7 +107,7 @@ const ElevationAcademyHome = () => {
                 <p className='student-review-heading2'>Our Students Speaks</p>
                 <Slider {...settings}>
                     {
-                        studnetReview.map((item, key) => < >
+                        studnetReview.map((item) => < >
                             <div className='student-review-div'>
                                 <div className='student-review-div-info'>
                                     <img src={item.img} alt="" />
