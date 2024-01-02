@@ -96,12 +96,12 @@ const FullStackHome = () => {
                             <p className='fch-home-right-text'>Limited seats available</p>
                         </div>
                         <div className='fch-home-right-div'>
-                            <p className='fch-home-right-heading'>Next Batch Start: 1st may,2023</p>
-                            <p className='fch-home-right-text'>Limited seats available</p>
+                            <p className='fch-home-right-heading'>Program Duration: 4 - 5 months</p>
+                            <p className='fch-home-right-text'>15-20 hours/week</p>
                         </div>
                         <div className='fch-home-right-div'>
-                            <p className='fch-home-right-heading'>Next Batch Start: 1st may,2023</p>
-                            <p className='fch-home-right-text'>Limited seats available</p>
+                            <p className='fch-home-right-heading'>Learning Format</p>
+                            <p className='fch-home-right-text'>Recorded Lectures + Online Live Classes</p>
                         </div>
                     </div>
                 </div>
@@ -110,16 +110,22 @@ const FullStackHome = () => {
             <div className='fch-batch'>
                 <h3>Select Batch</h3>
                 <div>
-                    <input type="radio" checked name='courseDate' onClick={() => setCourseDate("1 May")} />
-                    <div>
-                        <h4>1st May</h4>
-                        <p>Enrolment Started</p>
-                    </div>
+                    <label htmlFor="may1">
+                        <input id='may1' type="radio" checked name='courseDate' onClick={() => setCourseDate("1 May")} />
+                        <div>
+                            <h4>1st May</h4>
+                            <p>Enrolment Started</p>
+                        </div>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" name='courseDate' onClick={() => setCourseDate("15 May")} />
-                    <h4>15th May</h4>
-                    <p>Enrolment Started</p>
+                    <label htmlFor="may15">
+                        <input id='may15' type="radio" name='courseDate' onClick={() => setCourseDate("15 May")} />
+                        <div>
+                            <h4>15th May</h4>
+                            <p>Enrolment Started</p>
+                        </div>
+                    </label>
                 </div>
                 <div>
                     <h2 className='price-enroll-now'>₹30000</h2>
@@ -144,7 +150,7 @@ const FullStackHome = () => {
                     <div className='fch-journy-details-div1'>
                         {
                             journyData.map((item, key) => {
-                                return <div className='fch-journy-details-list' key={key} onClick={() => { setJournyData(item);handleClick() }}>
+                                return <div className='fch-journy-details-list' key={key} onClick={() => { setJournyData(item); handleClick() }}>
                                     <h1 className='fch-journy-details-list-num'>{key + 1}</h1>
                                     <h4>{item.heading}</h4>
                                 </div>

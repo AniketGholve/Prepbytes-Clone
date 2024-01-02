@@ -1105,7 +1105,7 @@
 }
 
 .item-logout {
-    color: #ff8787;
+    color: #ff8787 !important;
 }
 
 .overlay {
@@ -1522,7 +1522,7 @@
 .burgerLogo{
     margin: 1em;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:1024px) {
     .nav {
         display: none;
     }
@@ -1551,5 +1551,8 @@
     }
     .navbar-mob{
         height: 7vh;
+    }
+    .item-login{
+
     }
 }
