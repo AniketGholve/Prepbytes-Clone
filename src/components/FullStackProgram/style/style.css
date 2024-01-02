@@ -364,3 +364,69 @@
     z-index: 0;
     position: relative;
 }
+
+@media screen and (max-width:600px) {
+    .fch-home {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .fch-home-left h1{
+        font-size: 23px;
+        margin: 0 .8em;
+    }
+    .fch-home-left{
+        margin-top: 50vh;
+        background: url("https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/development-programs/full-stack-bg.png")center bottom / cover fixed;;
+    }
+    .fch-home-left h3{
+        font-size: 18px;
+        margin: 1em;
+    }
+    .fch-home-right{
+        background: #fff;
+    }
+    .fch-batch {
+        margin-top: 100%;
+        flex-direction: column;
+    }
+    .fch-lang-tool {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    .fch-lang-tool-img img {
+        margin-top: 1em;
+        width: 100%;
+    }
+    .fch-journy-details {
+        flex-direction: column;
+    }
+    .stack-program {
+        flex-direction: column;
+    }
+    .stack-program>div {
+        width: 100%;
+    }
+    .fch-journy-details-div2-list {
+        grid-template-columns: 1fr;
+    }
+    .fch-journy-details-div2-img {
+        display: none;
+    }
+    .fch-journy-details-div2-list {
+        position: static;
+    }
+    .fch-home-left p {
+        margin: 1em;
+    }
+    .fch-home-left-img {
+        margin: 1em;
+    }
+    .fch-home-left button {
+        margin: 0 1em ;
+    }
+    .fch-last-img {
+        width: 100%;
+        margin-top: 5em;
+    }
+}

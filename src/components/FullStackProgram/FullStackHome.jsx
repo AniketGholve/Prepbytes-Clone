@@ -2,23 +2,43 @@ import { Link } from 'react-router-dom'
 import './style/style.css'
 import Slider from 'react-slick'
 import { journyData } from './data/data';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
 import { loadStripe } from '@stripe/stripe-js';
 const FullStackHome = () => {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+            width,
+            height
+        };
+    }
+    let ref = useRef()
+    function handleClick() {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
     var settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" && windowDimensions.width < "900" ? 2 : 3,
         slidesToScroll: 1,
         className: 'slides-info'
     };
     let dispatch = useDispatch();
     let [journyItem, setJournyData] = useState(journyData[0])
     dispatch(getUser())
-    let [courseDate,setCourseDate]=useState("1 May")
+    let [courseDate, setCourseDate] = useState("1 May")
     let loggedUser = useSelector((state) => state.username)
     function loginCheck() {
         loggedUser ? makePayment() : alert("Login First")
@@ -90,14 +110,14 @@ const FullStackHome = () => {
             <div className='fch-batch'>
                 <h3>Select Batch</h3>
                 <div>
-                    <input type="radio" checked name='courseDate' onClick={()=>setCourseDate("1 May")} />
+                    <input type="radio" checked name='courseDate' onClick={() => setCourseDate("1 May")} />
                     <div>
                         <h4>1st May</h4>
                         <p>Enrolment Started</p>
                     </div>
                 </div>
                 <div>
-                    <input type="radio" name='courseDate'onClick={()=>setCourseDate("15 May")}/>
+                    <input type="radio" name='courseDate' onClick={() => setCourseDate("15 May")} />
                     <h4>15th May</h4>
                     <p>Enrolment Started</p>
                 </div>
@@ -124,14 +144,14 @@ const FullStackHome = () => {
                     <div className='fch-journy-details-div1'>
                         {
                             journyData.map((item, key) => {
-                                return <div className='fch-journy-details-list' key={key} onClick={() => {setJournyData(item);}}>
+                                return <div className='fch-journy-details-list' key={key} onClick={() => { setJournyData(item);handleClick() }}>
                                     <h1 className='fch-journy-details-list-num'>{key + 1}</h1>
                                     <h4>{item.heading}</h4>
                                 </div>
                             })
                         }
                     </div>
-                    <div className='fch-journy-details-div2'>
+                    <div className='fch-journy-details-div2' ref={ref}>
                         <h1 className='fch-journy-details-div2-heading'>{journyItem.heading ?? ""}</h1>
                         <div >
                             <ul className='fch-journy-details-div2-list'>
