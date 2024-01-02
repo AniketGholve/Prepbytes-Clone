@@ -21,6 +21,10 @@ const Navbar = () => {
         setLoggedUser(username)
         toggleUserOption()
     }
+    let handleLogoutMob=()=>{
+        localStorage.clear()
+        setToggleNav(!toggleNav)
+    }
     useEffect(() => {
         setLoggedUser(localStorage.getItem("username"))
     }, [username])
@@ -108,7 +112,7 @@ const Navbar = () => {
                         <li onClick={() => setToggleNav(!toggleNav)}><Link>Project</Link> </li>
                         {
                             loggedUser ? <>
-                                <li onClick={() => setToggleNav(!toggleNav)} className="item-logout-text">Logout</li>
+                                <li onClick={() => handleLogoutMob()} className="item-logout-text">Logout</li>
                             </> : <>
                                 <li onClick={() => setToggleNav(!toggleNav)}>
                                     <Link to={"/signup"} className="item-logout">Login/Signup</Link>
