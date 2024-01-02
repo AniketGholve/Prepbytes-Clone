@@ -7,8 +7,10 @@ import './style/style.css'
 import Syllabus from './Syllabus'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import ElevationForm from './ElevationForm'
 const ElevationAcademyHome = () => {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    const [formView, setFormView] = useState(false)
     function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
         return {
@@ -28,12 +30,15 @@ const ElevationAcademyHome = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" &&  windowDimensions.width < "900" ? 2:3,
+        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" && windowDimensions.width < "900" ? 2 : 3,
         slidesToScroll: 1,
         className: 'slides-info'
     };
     return (
         <div>
+            {
+                formView && <ElevationForm setFormView={setFormView} />
+            }
             <div className="elevationAcademyHome">
                 <div className='elevationAcademyHomeInfo'>
                     <h1>PrepBytes Elevation Academy - Full Stack Web Development Career</h1>
@@ -52,8 +57,8 @@ const ElevationAcademyHome = () => {
                         </li>
                     </ul>
                     <div className='elevationAcademyHomeBtn'>
-                        <button className='elevationAcademyHomeBtn-1'>Apply Now</button>
-                        <button className='elevationAcademyHomeBtn-2'>Get a call back</button>
+                        <button className='elevationAcademyHomeBtn-1' onClick={() => setFormView(!formView)}>Apply Now</button>
+                        <button className='elevationAcademyHomeBtn-2' onClick={() => setFormView(!formView)}>Get a call back</button>
                     </div>
                 </div>
                 <div className='elevationAcademyHomeImg'>
@@ -95,7 +100,7 @@ const ElevationAcademyHome = () => {
             <div className='upcomingBatch'>
                 <div>
                     <p className='upcomingBatchHeading'>Upcoming Elevation Academy Batch - Full Stack Web Development Career - May 2023 now OPEN</p>
-                    <button className='upcomingBatchBtn'>Apply Now</button>
+                    <button className='upcomingBatchBtn' onClick={() => setFormView(!formView)}>Apply Now</button>
                 </div>
                 <div>
                     <img src="https://s3.ap-south-1.amazonaws.com/www.prepbytes.com/images/elevation-academy/Images/batches-back.webp" alt="" />
