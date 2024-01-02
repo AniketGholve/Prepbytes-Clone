@@ -52,7 +52,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li><Link to={"/mern-stack-web-development-career"}>Elevated Academy</Link></li>
-                        <li><Link>Project</Link> </li>
+                        <li><Link to={"/project"}>Project</Link> </li>
                     </ul>
                     {
                         loggedUser && <div className="userInfo" onClick={toggleUserOption}>
@@ -109,7 +109,7 @@ const Navbar = () => {
                         <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/master-competitive-programming"}>Master Competitive Programming</Link></li>
                         <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/online-full-stack-developer-mern-certification-program"}>Full Stack Program</Link></li>
                         <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/mern-stack-web-development-career"}>Elevated Academy</Link></li>
-                        <li onClick={() => setToggleNav(!toggleNav)}><Link>Project</Link> </li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/project"}>Project</Link> </li>
                         {
                             loggedUser ? <>
                                 <li onClick={() => handleLogoutMob()} className="item-logout-text">Logout</li>

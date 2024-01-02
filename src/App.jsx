@@ -9,6 +9,7 @@ import ElevationAcademyHome from './components/ElevationAcademyComp/ElevationAca
 import Home from './components/Home/Home'
 import Login_Signup from './components/Login_Signup/Login_Signup'
 import Dashboard from './components/Dashboard/Dashboard'
+import Project from './components/Projects/Project'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/login' element={<Login_Signup />} />
           <Route path='/signup' element={<Login_Signup />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/project' element={<Project />} />
         </Routes>
       </BrowserRouter>
     </>
