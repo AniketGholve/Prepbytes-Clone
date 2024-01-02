@@ -160,7 +160,7 @@
     background: red;
     height: 84px;
     display: inline-block;
-    width: 294px;
+    width: 90%;
     border-radius: 8px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
     background: linear-gradient(134deg, rgba(48, 35, 174, .1), rgba(200, 109, 215, .1));
@@ -428,5 +428,33 @@
     .fch-last-img {
         width: 100%;
         margin-top: 5em;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:1024px) {
+    .fch-home {
+        width: 90%;
+    }
+    .fch-journy-details {
+        flex-direction: column;
+    }
+    .fch-journy-details-div1 {
+        width: 100%;
+    }
+    .fch-journy-details-list {
+        width: 100%;
+    }
+    .stack-program>div {
+        height: 50%;
+        margin: auto;
+    }
+    .fch-last-img {
+        margin-top: 5em;
+    }
+    .fch-home-left h3{
+        font-size: 18px;
+    }
+    .fch-home-left h1{
+        font-size: 24px;
     }
 }
