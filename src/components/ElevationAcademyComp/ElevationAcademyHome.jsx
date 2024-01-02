@@ -40,14 +40,14 @@ const ElevationAcademyHome = () => {
                     <p>Enroll in PrepBytes Elevation Academy - Full Stack Program and Guaranteed Tech Job of minimum 5 LPA.</p>
                     <ul>
                         <li>
-                            <img src="/public/right-arrow.svg" alt="" />
+                            <img src="/right-arrow.svg" alt="" />
                             Complete Live Class from experts</li>
                         <li>
-                            <img src="/public/right-arrow.svg" alt="" />
+                            <img src="/right-arrow.svg" alt="" />
                             Be the best Full stack developer
                         </li>
                         <li>
-                            <img src="/public/right-arrow.svg" alt="" />
+                            <img src="/right-arrow.svg" alt="" />
                             Job Guarantee
                         </li>
                     </ul>

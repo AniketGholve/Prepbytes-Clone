@@ -931,7 +931,7 @@
 }
 
 .mentor_college_cards {
-    display: flex;  
+    display: flex;
     width: 50%;
     margin: 6em auto;
     gap: 10%;
@@ -1373,70 +1373,89 @@
     .infoDiv {
         max-height: 100%;
     }
-    .final-goal img{
+
+    .final-goal img {
         width: 100%;
     }
+
     .codingJournyRight>div {
         margin: auto;
     }
+
     .infoDiv {
         width: 50%;
     }
+
     .courses {
         flex-direction: column;
     }
+
     .courseCard {
         height: 100%;
         width: 100%;
     }
+
     .expHomeDiv {
         margin-top: 50em;
         flex-direction: column-reverse;
         width: 75%;
     }
+
     .expBoxHomeImg-div1 {
         width: 50%;
         object-fit: contain;
     }
-    .expBoxHomeImg-div1 img{
+
+    .expBoxHomeImg-div1 img {
         width: 100%;
     }
-    .expBoxHomeImg-div2 img{
+
+    .expBoxHomeImg-div2 img {
         width: 100%;
     }
+
     .expBoxHomeImg-div2 {
         width: 50%;
         object-fit: contain;
     }
+
     .mostPopularBlogsGallary {
         flex-wrap: wrap;
         flex-direction: column;
     }
+
     .expBoxHome {
         width: 100%;
     }
-    .expBoxHome>p{
+
+    .expBoxHome>p {
         font-size: 24px;
     }
-    .profExpBox{
+
+    .profExpBox {
         width: 100%;
     }
+
     .codingJournyheading {
         font-size: 20px;
     }
+
     .courseHeading {
         margin-bottom: 2em;
     }
+
     .quiz-submit-btn {
         margin: 0%;
         padding: 14px;
     }
-    .home-quiz-div form{
+
+    .home-quiz-div form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .backBtn{
+
+    .backBtn {
         position: absolute;
         bottom: -5%;
         left: 50%;
@@ -1447,16 +1466,90 @@
         justify-content: center;
         font-size: 20px;
     }
-    .courseCard > h2{
+
+    .courseCard>h2 {
         font-size: 28px;
         text-align: center;
     }
+
     .mentor_card_gallary {
         width: 100%;
         flex-direction: row;
     }
-    .mentor_card{
+
+    .mentor_card {
         width: 40%;
-        min-width: 25em;
+        min-width: 17em;
+    }
+    .nav-mob{
+        display: none;
+    }
+}
+
+.nav-mob {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 300;
+    width: 100%;
+    height: 7vh;
+    background-color: #fff;
+}
+
+.nav-mob-links {
+    position: fixed;
+    right: 0%;
+    top: 7vh;
+    background-color: #fff;
+    padding: 0em 1em;
+    box-shadow: 0 3px 30px rgba(0, 0, 0, .1607843137254902);
+    width: 50%;
+    z-index: 300;
+    display: none;
+}
+
+
+.nav-mob-links ul li {
+    list-style-type: none;
+    margin: 2em 0;
+}
+
+.nav-mob-links ul li a {
+    color: black;
+    text-decoration: none;
+}
+.burgerLogo{
+    margin: 1em;
+}
+@media screen and (max-width:600px) {
+    .nav {
+        display: none;
+    }
+
+    .nav-mob {
+        display: flex;
+    }
+    .logo{
+        width: 50%;
+    }
+    .userInfo {
+        justify-content: start;
+        gap: 1em;
+        margin-left: 0em;
+    }
+    .item-dashboard {
+        border-top: 1px solid #cecece;
+        padding: 1em 0;
+        margin-top: 1em;
+    }
+    .nav-mob-links{
+        display: block;
+    }
+    .item-logout {
+        padding: 0;
+    }
+    .navbar-mob{
+        height: 7vh;
     }
 }

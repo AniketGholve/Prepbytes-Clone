@@ -23,7 +23,7 @@ const DashboardCard = ({ courseData }) => {
                         </div>
                     </div>
                     <div className="course-dates">
-                        <img className="course-date-icon" alt="clockIcon" src="/public/last-visited.svg" />
+                        <img className="course-date-icon" alt="clockIcon" src="/last-visited.svg" />
                         <div>
                             <div className="course-date-label">LAST VISIT:</div>
                             <div className="course-date">18 DEC 2023</div>

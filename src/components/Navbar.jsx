@@ -7,6 +7,7 @@ const Navbar = () => {
     let Navi = useNavigate()
     let dispatch = useDispatch()
     let [loggedUser, setLoggedUser] = useState(null)
+    let [toggleNav, setToggleNav] = useState(false)
     let toggleUserOption = () => {
         let toggleClass = document.getElementById("userOption");
         let overlay = document.getElementById("overlay");
@@ -25,7 +26,7 @@ const Navbar = () => {
     }, [username])
     return (
         <>
-            <div className="overlay d-none" id="overlay"onClick={toggleUserOption}> </div>
+            <div className="overlay d-none" id="overlay" onClick={toggleUserOption}> </div>
             <div className='nav'>
                 <div className='logo' onClick={() => Navi('/')}></div>
                 <div className={!loggedUser ? 'nav-routes' : 'nav-routes nav-routes-flex'}>
@@ -74,6 +75,47 @@ const Navbar = () => {
                             </div>
                         </div>
                     }
+                </div>
+            </div>
+            <div className="navbar-mob">
+
+                <div className='nav-mob'>
+                    <div className='logo' onClick={() => Navi('/')}></div>
+                    <div className="burgerLogo" onClick={() => setToggleNav(!toggleNav)}>&#9776;</div>
+                </div>
+                <div className={toggleNav ? "nav-mob-links" : "d-none"}>
+                    <ul>
+                        {
+                            loggedUser && <>
+                                <div className="userInfo">
+                                    <div className="userNameLogo">
+                                        <h3>{loggedUser.slice(0, 1)}</h3>
+                                    </div>
+                                    <div className="userName">
+                                        <h4>Hi {loggedUser}</h4>
+                                    </div>
+                                </div>
+                                <Link className="item item-dashboard" to="/dashboard" onClick={() => setToggleNav(!toggleNav)}>
+                                    <p className="item-left-text item-left-text-dashboard">My Dashboard</p>
+                                </Link>
+                            </>
+                        }
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/mock-test"}>Mock Test</Link></li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/preparation-videos"}>Video Tutorial</Link></li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/master-competitive-programming"}>Master Competitive Programming</Link></li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/online-full-stack-developer-mern-certification-program"}>Full Stack Program</Link></li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link to={"/mern-stack-web-development-career"}>Elevated Academy</Link></li>
+                        <li onClick={() => setToggleNav(!toggleNav)}><Link>Project</Link> </li>
+                        {
+                            loggedUser ? <>
+                                <li onClick={() => setToggleNav(!toggleNav)} className="item-logout-text">Logout</li>
+                            </> : <>
+                                <li onClick={() => setToggleNav(!toggleNav)}>
+                                    <Link to={"/signup"} className="item-logout">Login/Signup</Link>
+                                </li>
+                            </>
+                        }
+                    </ul>
                 </div>
             </div>
         </>
