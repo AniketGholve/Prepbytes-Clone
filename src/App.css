@@ -1119,6 +1119,7 @@
 }
 
 .footer_box{
+    position: sticky;
     padding-right: 12%;
     padding-bottom: 2%;
     padding-left: 12%;
