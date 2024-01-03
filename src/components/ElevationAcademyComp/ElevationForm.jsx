@@ -22,7 +22,7 @@ const ElevationForm = ({setFormView}) => {
                     <i className="fa-solid fa-xmark" onClick={()=>setFormView(false)}></i>
                 </div>
                 <div className="enquiryFromImg">
-                    <img src="public/form-img.svg" alt="" />
+                    <img src="/form-img.svg" alt="" />
                 </div>
                 <div className="enquiryFormData">
                     <h3>Take a step towards your dream job</h3>
