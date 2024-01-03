@@ -20,10 +20,12 @@ const Navbar = () => {
         dispatch(getUser());
         setLoggedUser(username)
         toggleUserOption()
+        Navi("/")
     }
     let handleLogoutMob=()=>{
         localStorage.clear()
         setToggleNav(!toggleNav)
+        Navi("/")
     }
     useEffect(() => {
         setLoggedUser(localStorage.getItem("username"))
