@@ -24,6 +24,7 @@ const Navbar = () => {
     }
     let handleLogoutMob=()=>{
         localStorage.clear()
+        dispatch(getUser());
         setToggleNav(!toggleNav)
         Navi("/")
     }

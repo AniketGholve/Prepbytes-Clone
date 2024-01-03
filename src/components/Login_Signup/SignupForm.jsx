@@ -3,32 +3,42 @@ import axios from "axios"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { setUser } from "../Redux/Slice"
-
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 const SignupForm = () => {
-    let data={}
-    let navi=useNavigate()
-    let dispatch=useDispatch()
-    const handleChange = (e)=>{
-        data[e.target.name]=e.target.value
+    let data = {}
+    let navi = useNavigate()
+    let dispatch = useDispatch()
+    const handleChange = (e) => {
+        data[e.target.name] = e.target.value
     }
-    const successLogin=(username,email)=>{
-        let data={
-            "username":username,
-            "email":email
+    const successLogin = (username, email) => {
+        let data = {
+            "username": username,
+            "email": email
         }
         dispatch(setUser(data))
         navi("/");
     }
-    const checkLogin = (e) => {
+    const checkLogin = async (e) => {
         e.preventDefault()
-        axios.post("https://prepbytes-clone-yczy.onrender.com/register",data).then(res=>res.status===200 && successLogin(data.name,data.email))
-        console.log(data)
+        await axios.post("https://prepbytes-clone-yczy.onrender.com/register", data)
+            .then(res => successLogin(data.name, data.email))
+            .catch((e) => {
+                toast.error("Error While Signup", {
+                    theme: "colored"
+                })
+            })
+            .finally(() => {
+                document.getElementById("signupForm").reset();
+            })
     }
     return (
-        <form className="form">
+        <form id="signupForm" className="form">
+            <ToastContainer />
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Name" name="name" variant="standard" onChange={handleChange}/>
+                    <TextField label="Name" name="name" variant="standard" onChange={handleChange} />
                 </div>
             </div>
             <div className="form__container">
@@ -38,7 +48,7 @@ const SignupForm = () => {
             </div>
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Phone No" name="phone-no" variant="standard" onChange={handleChange}/>
+                    <TextField label="Phone No" name="phone-no" variant="standard" onChange={handleChange} />
                 </div>
             </div>
             <div className="form__container">
@@ -49,7 +59,7 @@ const SignupForm = () => {
             <div className="register-select">
                 <div className="select-college-container">
                     <div className="form-field">
-                        <TextField label="College" name="college" variant="standard" onChange={handleChange}/>
+                        <TextField label="College" name="college" variant="standard" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="form-field">
@@ -71,7 +81,7 @@ const SignupForm = () => {
                 </div>
             </div>
             <div className="accept-terms-and-conditions-container">
-                <input type="checkbox" className="terms-and-conditions-checkbox" name="terms-and-conditions" checked onChange={handleChange}/>
+                <input type="checkbox" className="terms-and-conditions-checkbox" name="terms-and-conditions" checked onChange={handleChange} />
                 <span className="accept-terms-and-conditions-label">I agree to the <Link href="https://www.prepbytes.com/terms-and-conditions" target="_blank" className="terms-and-conditions-link">terms and conditions</Link>.</span>
             </div>
             <button type="Submit" className="form-button" onClick={checkLogin}>Sign Up</button>

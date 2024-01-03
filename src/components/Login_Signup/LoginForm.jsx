@@ -3,36 +3,42 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { setUser } from '../Redux/Slice'
-
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 const LoginForm = () => {
-    let navi=useNavigate()
-    let data={}
-    let dispatch=useDispatch();
-    const handleChange = (e)=>{
-        data[e.target.name]=e.target.value
+    let navi = useNavigate()
+    let data = {}
+    let dispatch = useDispatch();
+    const handleChange = (e) => {
+        data[e.target.name] = e.target.value
     }
-    const successLogin=(username,email)=>{
-        let data={
-            "username":username,
-            "email":email
+    const successLogin = (username, email) => {
+        let data = {
+            "username": username,
+            "email": email
         }
         dispatch(setUser(data))
         navi("/");
     }
-    const checkLogin = (e) => {
+    const checkLogin = async (e) => {
         e.preventDefault()
-        axios.post("https://prepbytes-clone-yczy.onrender.com/login",data).then(res=>res.status===200 && successLogin(res.data.username,data.email))
+        await axios.post("https://prepbytes-clone-yczy.onrender.com/login", data)
+            .then(res => !res.data.err ? successLogin(res.data.username) : toast.error("Error While Login", {
+                theme: "colored"
+            }))
+        document.getElementById("formLogin").reset()
     }
     return (
-        <form className="form" onSubmit={checkLogin}>
+        <form id="formLogin" onSubmit={checkLogin}>
+            <ToastContainer />
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Email" name='email' variant="standard"  onChange={handleChange}/>
+                    <TextField id="loginEmail" label="Email" name='email' variant="standard" onChange={handleChange} />
                 </div>
             </div>
             <div className="form__container">
                 <div className="form-field">
-                    <TextField label="Password" name='password' variant="standard" type='password' onChange={handleChange}/>
+                    <TextField label="Password" name='password' variant="standard" type='password' onChange={handleChange} />
                 </div>
             </div>
             <div className="accept-terms-and-conditions-container">
