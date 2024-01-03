@@ -11,13 +11,17 @@ const SignupForm = () => {
     const handleChange = (e)=>{
         data[e.target.name]=e.target.value
     }
-    const successLogin=(username)=>{
-        dispatch(setUser(username))
+    const successLogin=(username,email)=>{
+        let data={
+            "username":username,
+            "email":email
+        }
+        dispatch(setUser(data))
         navi("/");
     }
     const checkLogin = (e) => {
         e.preventDefault()
-        axios.post("https://prepbytes-clone-yczy.onrender.com/register",data).then(res=>res.status===200 && successLogin(data.name))
+        axios.post("https://prepbytes-clone-yczy.onrender.com/register",data).then(res=>res.status===200 && successLogin(data.name,data.email))
         console.log(data)
     }
     return (

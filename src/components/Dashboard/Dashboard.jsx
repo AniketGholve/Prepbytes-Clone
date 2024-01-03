@@ -12,7 +12,7 @@ const Dashboard = () => {
     useEffect(()=>{
         console.log(email)
         axios.post("https://prepbytes-clone-yczy.onrender.com/getCourseOfUser",{"email":email}).then(res=>{
-            setCourseData(res.data.course)
+            setCourseData(res.data.course??[])
         })
     },[])
     return (
