@@ -1669,4 +1669,7 @@ a:link {
     .footer_links {
         text-align: center;
     }
+    .footer_articles{
+        padding: 0%;
+    }
 }
