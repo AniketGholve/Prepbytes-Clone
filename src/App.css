@@ -1672,4 +1672,8 @@ a:link {
     .footer_articles{
         padding: 0%;
     }
+    .footer_policy_rights div {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
