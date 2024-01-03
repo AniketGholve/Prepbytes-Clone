@@ -1,12 +1,15 @@
-const ProjectCard = () => {
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom"
+
+const ProjectCard = ({name,img,link}) => {
     return (
         <div className="projectCard">
             <div className="projectCardImg">
-                <img src="/public/project-images/todo-js.png" alt="" />
+                <img src={img} alt="" />
             </div>
             <div className="projectCardInfo">
-                <h2>Todo-js</h2>
-                <button className="btn">View Project</button>
+                <h2>{name}</h2>
+                <Link to={link} target="_blank" className="btn projectButton-blue">View Project</Link>
             </div>
         </div>
     )

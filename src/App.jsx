@@ -10,6 +10,7 @@ import Home from './components/Home/Home'
 import Login_Signup from './components/Login_Signup/Login_Signup'
 import Dashboard from './components/Dashboard/Dashboard'
 import Project from './components/Projects/Project'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/project' element={<Project />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )

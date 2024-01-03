@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard'
+import { projectData } from './data/data'
 import './style/style.css'
 const Project = () => {
   return (
@@ -10,10 +11,11 @@ const Project = () => {
         <button className='btn projectButton-blue'>Go To The Section</button>
       </div>
       <div className='projectData'>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {
+          projectData.map((item,key)=>{
+            return <ProjectCard name={item.name} img={item.img} link={item.link} key={key}/>
+          })
+        }
       </div>
     </div>
   )
