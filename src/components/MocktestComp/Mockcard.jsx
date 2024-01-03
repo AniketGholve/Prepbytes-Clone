@@ -3,15 +3,18 @@ import { loadStripe } from "@stripe/stripe-js";
 import "./style/mock.css"
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../Redux/Slice";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Mockcard = ({ practice, name, date, participants, duration, img }) => {
   let dispatch = useDispatch();
   dispatch(getUser())
   let loggedUser = useSelector((state) => state.username)
   function loginCheck(name) {
-    loggedUser ? buyTest(name,img) : alert("Login First")
+    loggedUser ? buyTest(name, img) : toast.error("Login First", {
+      theme: "colored"
+    })
   }
-  const buyTest = async (name,img) => {
+  const buyTest = async (name, img) => {
     const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
     let data = {
       "name": name,
@@ -43,6 +46,7 @@ const Mockcard = ({ practice, name, date, participants, duration, img }) => {
   }
   return (
     <div className={practice === "topic" ? "practiceCard" : practice === "company" ? "companyCard" : "mockCard"}>
+      <ToastContainer />
       {!practice && <div className="mockOptions">
         <img src="/info.png" alt="" />
         <img src="/share.svg" alt="" />
@@ -68,7 +72,7 @@ const Mockcard = ({ practice, name, date, participants, duration, img }) => {
         </div>
       </div>}
       <div className="btn-div" >
-        <button className="btn btn-test" onClick={() => loginCheck(name,img)}>Test Now</button>
+        <button className="btn btn-test" onClick={() => loginCheck(name, img)}>Test Now</button>
       </div>
     </div>
   )

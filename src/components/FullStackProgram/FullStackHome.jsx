@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
 import { loadStripe } from '@stripe/stripe-js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const FullStackHome = () => {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     function getWindowDimensions() {
@@ -41,7 +43,9 @@ const FullStackHome = () => {
     let [courseDate, setCourseDate] = useState("1 May")
     let loggedUser = useSelector((state) => state.username)
     function loginCheck() {
-        loggedUser ? makePayment() : alert("Login First")
+        loggedUser ? makePayment() : toast.error("Login First",{
+            theme: "colored"
+        })
     }
     async function makePayment() {
         const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
@@ -77,6 +81,7 @@ const FullStackHome = () => {
     }
     return (
         <div>
+            <ToastContainer/>
             <div className='fch-home-main'>
                 <div className="fch-home">
                     <div className='fch-home-left'>

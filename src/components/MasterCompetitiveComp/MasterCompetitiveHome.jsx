@@ -8,30 +8,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Redux/Slice';
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const MasterCompetitiveHome = () => {
     console.log(window.innerWidth)
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     function getWindowDimensions() {
         const { innerWidth: width, innerHeight: height } = window;
         return {
-          width,
-          height
+            width,
+            height
         };
-      }
+    }
     useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
-          }
-      
-          window.addEventListener('resize', handleResize);
-          return () => window.removeEventListener('resize', handleResize);
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, [])
     let dispatch = useDispatch();
     var settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" &&  windowDimensions.width < "900" ? 2:3,
+        slidesToShow: windowDimensions.width < "600" ? 1 : windowDimensions.width > "600" && windowDimensions.width < "900" ? 2 : 3,
         slidesToScroll: 1,
         className: 'slides'
     };
@@ -44,9 +46,11 @@ const MasterCompetitiveHome = () => {
         ref.current?.scrollIntoView({ behavior: 'smooth' })
     }
     function loginCheck() {
-        loggedUser ? makePayment() : alert("Login First")
+        loggedUser ? makePayment() : toast.error("Login First", {
+            theme: "colored"
+        })
     }
-    let [courseDate,setCourseDate]=useState("1 May")
+    let [courseDate, setCourseDate] = useState("1 May")
     async function makePayment() {
         const stripe = await loadStripe("pk_test_51OLfmRSFBQcGNae0imTwNJsk0l4kJ7cBgdwuzWBbNjUARpdjPb1x2tpEOX4d0pzYqsjetNJHqZYgfxWXohcFB96M00vdsAkzac");
         let data = {
@@ -80,6 +84,7 @@ const MasterCompetitiveHome = () => {
     }
     return (
         <div className="masterCompetitiveHome">
+            <ToastContainer />
             <div className='mch-home'>
                 <div>
                     <h1 className='mch-heading'>MASTER COMPETITIVE PROGRAMMING</h1>
@@ -195,11 +200,11 @@ const MasterCompetitiveHome = () => {
             <div className='mch-batch' ref={ref}>
                 <h4>SELECT BATCH</h4>
                 <div className='mch-enroll-details'>
-                    <div className={courseDate ==="1 May" ? 'mch-enroll-date-selected' :"mch-enroll-date-not-selected"} onClick={()=>setCourseDate("1 May")}>
+                    <div className={courseDate === "1 May" ? 'mch-enroll-date-selected' : "mch-enroll-date-not-selected"} onClick={() => setCourseDate("1 May")}>
                         <h3>1st MAY</h3>
                         <p>Enrolment Started</p>
                     </div>
-                    <div className={courseDate ==="1 May" ? 'mch-enroll-date-not-selected' :"mch-enroll-date-selected"} onClick={()=>setCourseDate("15 May")}>
+                    <div className={courseDate === "1 May" ? 'mch-enroll-date-not-selected' : "mch-enroll-date-selected"} onClick={() => setCourseDate("15 May")}>
                         <h3>15th MAY</h3>
                         <p>Enrolment Started</p>
                     </div>
