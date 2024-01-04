@@ -73,6 +73,7 @@
     background: transparent linear-gradient(180deg,#e0ebf9,#fff 54%,#fff) 0 0 no-repeat padding-box;
     box-shadow: 0 10px 30px rgba(95,141,196,.2);
     border-radius: 5px;
+    margin: auto;
     margin-top: 1.5em;
 }
 .mockCardDiv{
