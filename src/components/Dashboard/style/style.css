@@ -145,13 +145,33 @@
     font: normal normal 700 14px/17px Inter;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (min-width:600px) and (max-width:1024px) {
     .dashboardCardGrid {
         width: 80%;
     }
+
     .course-container {
         width: 45%;
+        margin: 1em auto;
+        min-width: 300px;
     }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width:599px) {
+    .dashboardCardGrid {
+        width: 80%;
+    }
+
+    .course-container {
+        width: 45%;
+        margin: 1em auto;
+        min-width: 100%;
+    }
+
     .sidebar {
         display: none;
     }
