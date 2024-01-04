@@ -730,7 +730,6 @@
     object-fit: cover;
     height: 15vh;
     width: 100%;
-    background-size: contain;
 }
 
 .mentor_bg_img img {
