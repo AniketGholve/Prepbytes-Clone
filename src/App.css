@@ -488,13 +488,13 @@
 
 .expHomeDiv {
     display: flex;
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-bottom: 5%;
 }
 
 .expBoxHome {
-    width: 40%;
+    width: 50%;
 }
 
 .expBoxHome>p {
@@ -542,13 +542,24 @@
 
 .expBoxHomeImg {
     display: flex;
+    width: 50%;
 }
 
 .expBoxHomeImg-div1 {
     display: flex;
     justify-content: center;
 }
-
+.expBoxHomeImg-div1 img {
+    width: 100%;
+}
+.expBoxHomeImg-div2 img {
+    width: 100%;
+}
+.expBoxHomeImg-div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .founderSection {
     background: #fdf0d7;
     min-height: 50px;
