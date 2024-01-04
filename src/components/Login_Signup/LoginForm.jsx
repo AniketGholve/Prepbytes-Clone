@@ -23,7 +23,7 @@ const LoginForm = () => {
     const checkLogin = async (e) => {
         e.preventDefault()
         await axios.post("https://prepbytes-clone-yczy.onrender.com/login", data)
-            .then(res => !res.data.err ? successLogin(res.data.username) : toast.error("Error While Login", {
+            .then(res => !res.data.err ? successLogin(res.data.username,data.email) : toast.error("Error While Login", {
                 theme: "colored"
             }))
         document.getElementById("formLogin").reset()
