@@ -1308,10 +1308,6 @@ a:link {
         margin: 0 auto;
     }
 
-    .cardInfo {
-        height: 25vh;
-    }
-
     .cardInfo div {
         width: 43%;
         padding: .2em;
@@ -1340,7 +1336,6 @@ a:link {
 
     .placedStudent img {
         width: 100%;
-        height: 46vh;
         object-fit: cover;
     }
 
@@ -1494,6 +1489,7 @@ a:link {
 
     .courses {
         flex-direction: column;
+        height: auto;
     }
 
     .courseCard {
@@ -1502,11 +1498,10 @@ a:link {
     }
 
     .expHomeDiv {
-        margin-top: 50em;
         flex-direction: column-reverse;
         width: 75%;
     }
-
+    
     .expBoxHomeImg-div1 {
         width: 50%;
         object-fit: contain;
@@ -1523,6 +1518,9 @@ a:link {
     .expBoxHomeImg-div2 {
         width: 50%;
         object-fit: contain;
+    }
+    .expBoxHomeImg{
+        width: 100%;
     }
 
     .mostPopularBlogsGallary {
