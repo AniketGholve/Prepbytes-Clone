@@ -77,8 +77,8 @@
     filter: drop-shadow(0px 0px 2px black);
 }
 
-@media screen and(max-width:1024px) {
-    .projectHeading{
+@media screen and (max-width:1024px) {
+    .projectHeading h1{
         width: 100%;
     }
     .projectHeading{
